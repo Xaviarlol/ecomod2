@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="22fabfed-02da-4158-877c-d72bf010b0bf" version="4">
+  <Properties>
+    <Name>Economics</Name>
+    <Teaser>An Economic Simulator[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]For Vanilla, GnK, BNW[ENDCOLOR]</Teaser>
+    <Description>Add a new level of government administration and strategy with this economic simulator, which allows you to manage tax rates, issue debt and enact new economic policies. 
+[NEWLINE][NEWLINE]Enjoy prosperity for astute economic management, but face a new disaster -- the Depression -- if your economy enters a prolonged downturn.</Description>
+    <Authors>FramedArchitecure</Authors>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>0</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>0</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>0</ReloadUnitSystem>
+  </Properties>
+  <Dependencies />
+  <References />
+  <Blocks />
+  <Files>
+    <File md5="CA13D1A309D9B1E348CAB66DD4EDF688" import="1">Art/Econ_FontIcons.dds</File>
+    <File md5="69A40FFB4EA49FD225E1AE7D3EE2ADE0" import="1">Art/Econ_Icon.dds</File>
+    <File md5="E6336A3E4451B4080128AEAEFADDB25C" import="1">Art/Econ_FontIcons.ggxml</File>
+    <File md5="527B2049E5E1C356C950D080A270ED06" import="0">Database/Economics.sql</File>
+    <File md5="B9CBB19AB8916AF9385ACC04D4CA7697" import="0">Localization/Econ_en_US.xml</File>
+    <File md5="36D41328512A7B85385C189A6E5290C1" import="0">Localization/Econ_es_ES.xml</File>
+    <File md5="13E29290166F5F6273F67FEEB0035D3E" import="1">Lua/Econ_Overview.lua</File>
+    <File md5="5AD19481D18C324DE3B928BD971BB216" import="1">Lua/Econ_Overview.xml</File>
+    <File md5="1CE412A928B97D03EF309B14779ED875" import="1">Lua/Econ_Global.lua</File>
+    <File md5="9896869C9433CD60F8DEDEF439283F3A" import="1">Lua/Econ_Math.lua</File>
+    <File md5="CF2D2226C38D5876AD53BC1C6973CC89" import="1">Lua/Econ_Player.lua</File>
+    <File md5="6A502D3FFBEFC4382345087AB365B896" import="0">Lua/Econ_Main.lua</File>
+    <File md5="18FBDAAA4E9646DDDF916000AEAB51D0" import="0">Lua/Econ_Main.xml</File>
+    <File md5="5001AF72B1D3116BA1CF3F0F21D79CE6" import="1">Lua/Econ_Popup.lua</File>
+    <File md5="46B5982DF3514D601F9EA5FA57270763" import="1">Lua/Econ_Popup.xml</File>
+    <File md5="75C8321B99A38EC5C27A6AA72630C5C7" import="1">Lua/Library/JFD_TopPanelUpdated.lua</File>
+    <File md5="7C83BC818781F9DFFDA2B2A06BC8978F" import="1">Lua/Library/TableSaverLoader016.lua</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>Database/Economics.sql</UpdateDatabase>
+      <UpdateDatabase>Localization/Econ_en_US.xml</UpdateDatabase>
+      <UpdateDatabase>Localization/Econ_es_ES.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/Econ_Main.xml">
+      <Name>Economics</Name>
+      <Description>Econonomics</Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

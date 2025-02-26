@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/5/2015 -->
+<Context ColorSet="Beige_Black_Alpha" Font="TwCenMT16" FontStyle="Shadow" Name="FA_Economics">
+	<Container Size="F,F" ID="BulkUI">
+		<Stack Anchor="L,T" Offset="10,6" Padding="10" StackGrowth="Right" ID="InfoIcon">
+			<TextButton Anchor="C,T" String="GDP!" ColorLayer0="255,255,200,255"  ID="EconString" ToolTipType="TooltipTypeTopPanel" />
+		</Stack>
+		<LuaContext FileName="Econ_Overview" ID="Econ_Overview" Hidden="True"/>
+		<LuaContext FileName="Econ_Popup" ID="Econ_Popup" Hidden="True"/>
+	</Container>
+
+	<ToolTipType Name="TooltipTypeTopPanel" >
+		<Grid Size="530,90" Offset="8.0" Padding="8,8" Style="GridBlack8"  ID="TopPanelMouseover" NoClip="1" >
+			<Label Offset="12,12" Font="TwCenMT16" ID="TooltipLabel" String="Brief description" LeadingOffset="-5" WrapWidth="512" />
+		</Grid>
+	</ToolTipType>
+	
+</Context>

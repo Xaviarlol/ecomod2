@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!--Spanish-->
+	<Language_es_ES>
+		<Row Tag="TXT_KEY_TP_FA_ECON_POLITICAL_CAPITAL_MISC">
+			<Text>Si la presión fiscal está por encima del 5%, tu civilización empezará a pagarlo en forma de capital político, lo que reducirá la [ICON_CULTURE] Cultura producida por turno.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_FA_ECON_POLITICAL_CAPITAL">
+			<Text>[COLOR_WARNING_TEXT]{1_Num}[ENDCOLOR] por la presión fiscal.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_FA_ECON_TAX_REVENUE">
+			<Text>{1_Num} por ingresos tributarios.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_FA_ECON_TAX_EXPENSE">
+			<Text>{1_Num} de gasto en el mantenimiento del gobierno.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_FA_ECON_GDP_TOTAL_TT">
+			<Text>[ICON_BULLET]{1_Value} Producto Interior Bruto (PIB).</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_FA_ECON_GDP_GROWTH_TT">
+			<Text>[ICON_BULLET]{1_Value}>% de crecimiento del PIB respecto al turno anterior.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_FA_ECON_GDP_CONSUMER_TT">
+			<Text>[ICON_BULLET]{1_Value}% GDP from Consumer Spending</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_FA_ECON_GDP_GOVERNMENT_TT">
+			<Text>[ICON_BULLET]{1_Value}% GDP from Government Spending</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_FA_ECON_GDP_INVESTMENT_TT">
+			<Text>[ICON_BULLET]{1_Value}% GDP from Investment Spending</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_FA_ECON_GDP_TRADE_TT">
+			<Text>[ICON_BULLET]{1_Value}% GDP from International Trade</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_FA_ECON_GDP_DEFINE_TOOLTIP">
+			<Text>El Producto Interior Bruto (PIB) es el valor monetario de todos los bienes y servicios producidos por una civilización en un turno. El PIB se usa para calcular los ingresos tributarios y los tipos de interés de la deuda.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_FA_ECON_SCREEN_TOOLTIP">
+			<Text>Clica con el botón izquierdo en [ICON_ECONOMICS] para abrir el Informe Económico (Ctrl+C).</Text>
+		</Row>
+		<!--Popup-->
+		<Row Tag="TXT_KEY_FA_ECON_POPUP_UNKNOWN">
+			<Text>???</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FA_ECON_POPUP_UNKNOWN_HELP">
+			<Text>Establece una embajada en esta civilización para ver sus datos macroeconómicos.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FA_ECON_POPUP_BOOM_TT">
+			<Text>[COLOR_FONT_GREEN]Boom[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FA_ECON_POPUP_EXPANSION_TT">
+			<Text>[COLOR_FONT_GREEN]Expansión[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FA_ECON_POPUP_STABLE_TT">
+			<Text>[COLOR_FONT_GREEN]Estable[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FA_ECON_POPUP_STAGNATION_TT">
+			<Text>[COLOR_FONT_RED]Estancamiento[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FA_ECON_POPUP_RECESSION_TT">
+			<Text>[COLOR_FONT_RED]Recesión[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FA_ECON_POPUP_PANIC_TT">
+			<Text>[COLOR_FONT_RED]Pánico[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FA_ECON_POPUP_DEPRESSION_TT">
+			<Text>[COLOR_FONT_RED]Depresión[ENDCOLOR]</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_DIPLO_CORNER_HOOK_FA_ECON_ADDINS">
+			<Text>[COLOR_POSITIVE_TEXT]Informe Económico (Ctrl+C)[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_TITLE">
+			<Text>INFORME ECONÓMICO</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_TAB_OUR">
+			<Text>Economía nacional</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_TAB_WORLD">
+			<Text>Economía mundial</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_TAB_HISTORY">
+			<Text>Historial económico</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_NONE">
+			<Text>No Current Economic Data</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_WORLD_INDEX">
+			<Text>ESTADO: {1_String}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_WORLD_INDEX_TT">
+			<Text>Estado actual de la economía mundial.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_INDEX">
+			<Text>ESTADO: {1_String}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_INDEX_TT">
+			<Text>Estado actual de nuestra economía.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_PERCENTAGE">
+			<Text>(%)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_PERCENTAGE_TT">
+			<Text>Porcentaje sobre el PIB total.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_YEAR">
+			<Text>Año</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_GROWTH">
+			<Text>Crecimiento</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_GROWTH_TT">
+			<Text>Porcentaje que la economía creció desde el año anterior.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_TOTAL_GDP">
+			<Text>PIB total</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_TOTAL_GDP_TT">
+			<Text>El valor total de los bienes y servicios producidos por una civilización en un turno.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_CONSUMER_GDP">
+			<Text>PIB de consumo</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_CONSUMER_GDP_TT">
+			<Text>Calculado sobre la población actual menos los ciudadanos desempleados. Se incrementa a mayor felicidad. Se contrae a mayores impuestos.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_GOVERNMENT_GDP">
+			<Text>PIB gubernamentalP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_GOVERNMENT_GDP_TT">
+			<Text>Calculado sobre la producción de maravillas, edificios militares y unidades.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_INVESTMENT_GDP">
+			<Text>PIB de inversión</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_INVESTMENT_GDP_TT">
+			<Text>Based on production of buildings and civilian units, and internal trade and banking. Decreases with rising tax rates.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_INVESTMENT_GDP_MARKET_TT">
+			<Text>
+				Calculado sobre la producción de unidades y edificios civiles, comercio interno, banca y sobre la tasa de crecimiento del mercado. Se contrae a mayores impuestos.
+				[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Crecimiento del mercado: {1_Growth}[ENDCOLOR]
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_TRADE_GDP">
+			<Text>PIB comercial</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_TRADE_GDP_TT">
+			<Text>La suma de todas las exportaciones e importaciones, incluyendo el comercio internacional. Se contrae a mayores impuestos.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_UNEMPLOYMENT">
+			<Text>Paro</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_UNEMPLOYMENT_TT">
+			<Text>Tasa de paro actual; varía en función de la ideología escogida y de forma inversa al crecimiento económico.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE">
+			<Text>[COLOR_POSITIVE_TEXT]INGRESOS[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_TAX_BUTTON">
+			<Text>Fijar impuestos</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_TOTAL">
+			<Text>Total</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_TOTAL_TT">
+			<Text>Ingresos tributarios totales.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_TAX_AVERAGE">
+			<Text>Presión fiscal</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_TAX_AVERAGE_TT">
+			<Text>Tasa media de impuestos.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_MARKET">
+			<Text>Mercado</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_MARKET_TT">
+			<Text>Indica la medida en la que la especulación afecta al PIB de inversión. Comienza en el Renacimiento.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_INCOME">
+			<Text>Impuesto sobre la renta</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_INCOME_TT">
+			<Text>Impuesto sobre la renta (ISR). Ingresos recaudados por los impuestos sobre los ciudadanos ocupados.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_TAX_INCOME">
+			<Text>Tasa ISR</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_TAX_INCOME_TT">
+			<Text>Impuesto sobre la renta (ISR). Impuestos por encima del 45% afectan negativamente al PIB de consumo.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_BUSINESS">
+			<Text>Impuesto de sociedades</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_BUSINESS_TT">
+			<Text>Impuesto de sociedades (IS). Ingresos recaudados por los impuestos sobre mercaderes, comerciantes y empresas.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_TAX_BUSINESS">
+			<Text>Tasa IS</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_TAX_BUSINESS_TT">
+			<Text>Impuesto de sociedades (IS). Impuestos por encima del 45% afectan negativamente al PIB de inversión.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_IMPORTS">
+			<Text>Aranceles de importación</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_IMPORTS_TT">
+			<Text>Ingresos recaudados por los impuestos sobre las importaciones y rutas comerciales entrantes.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_TAX_IMPORTS">
+			<Text>Tasa arancelaria de importación</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_TAX_IMPORTS_TT">
+			<Text>Impuestos por encima del 45% afectan negativamente al PIB comercial.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_EXPORTS">
+			<Text>Aranceles de exportación</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_EXPORTS_TT">
+			<Text>Ingresos recaudados por los impuestos sobre las exportaciones y rutas comerciales salientes.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_TAX_EXPORTS">
+			<Text>Tasa arancelaria de exportación</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_TAX_EXPORTS_TT">
+			<Text>Impuestos por encima del 45% afectan negativamente al PIB comercial.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES">
+			<Text>[COLOR_WARNING_TEXT]GASTOS[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_DEBT_BUTTON">
+			<Text>Emitir deuda</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_TOTAL">
+			<Text>Total</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_TOTAL_TT">
+			<Text>Gastos totales.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_POLICY">
+			<Text>Políticas</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_POLICY_TT">
+			<Text>Gastos por implementar las políticas gubernamentales adoptadas.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_MILITARY">
+			<Text>Gastos militares</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_MILITARY_TT">
+			<Text>Gastos para la manutención del ejército y de edificios defensivos.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_BUILDINGS">
+			<Text>Edificios gubernamentales</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_BUILDINGS_TT">
+			<Text>Gastos para la manutención de delegaciones, maravillas nacionales y edificios de espionaje.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_CITIES">
+			<Text>Ciudades</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_CITIES_TT">
+			<Text>Gastos para el mantenimiento de cada ciudad. Se incrementan a mayor distancia de la capital y disminuyen en ciudades títeres o ciudades conectadas con la capital.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_CULTURE">
+			<Text>Capital político</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_CULTURE_TT">
+			<Text>Cultura [ICON_CULTURE] perdida cuando los impuestos suben por encima del 5%; aumenta a mayores impuestos.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_DEBT_TOTAL">
+			<Text>Deuda total</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_DEBT_TOTAL_TT">
+			<Text>Monto total adeudado por nuestro gobierno a sus acreedores.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_DEBT_PAYMENT">
+			<Text>Servicio de deuda</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_DEBT_PAYMENT_TT">
+			<Text>Montante principal más los intereses que nuestro gobierno debe pagar a sus acreedores por turno.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_INTEREST_RATE">
+			<Text>Tipos de interés</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_INTEREST_RATE_TT">
+			<Text>Tipo de interés actual; varía dependiendo del crecimiento económico, ingresos e ideología.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_WORLD_NONE">
+			<Text>No World Economic Data</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_CIV_NAME">
+			<Text>Civilización</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_GDP_PER_CAPITA">
+			<Text>Per cápita</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_GDP_PER_CAPITA_TT">
+			<Text>La renta per cápita indica los ingresos medios por ciudadano de una civilización.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_BUDGET_TOTAL">
+			<Text>Presupuesto</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_BUDGET_TOTAL_TT">
+			<Text>Diferencia entre los ingresos y gastos gubernamentales para el turno actual.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_DEBT_TOTAL">
+			<Text>Deuda</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_HISTORY_NONE">
+			<Text>No Historic Economic Data</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_AVERAGE_TAX">
+			<Text>Presión fiscal: {1_Value}%</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_TAX_DISABLED_TT">
+			<Text>Podrá modificarse a partir de la {1_Era}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_TAX_AVERAGE_DISABLED_TT">
+			<Text>Podrán ajustarse los impuestos por sectores una vez entrada la {1_Era}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_INCOME_TAX">
+			<Text>Impuesto sobre la renta: {1_Value}%</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_BUSINESS_TAX">
+			<Text>Impuesto de sociedades: {1_Value}%</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_IMPORT_TAX">
+			<Text>Aranceles de importación: {1_Value}%</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_EXPORT_TAX">
+			<Text>Aranceles de exportación: {1_Value}%</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ACCEPT_TAX">
+			<Text>Fijar impuestos</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_DISABLED">
+			<Text>Podrás emitir deuda después de entrar en el {1_Era}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_DISABLED_ERA_TT">
+			<Text>Podrás emitir deuda después de entrar en el {1_Era}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_DISABLED_MIN_TT">
+			<Text>El préstamo mínimo debe ser de al menos {1_Gold}[ICON_GOLD].</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_PRINCIPAL">
+			<Text>Montante principal: {1_Value}[ICON_GOLD]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_PRINCIPAL_TT">
+			<Text>Oro [ICON_GOLD] que se recibirá al emitir deuda.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_INTEREST_RATE">
+			<Text>Tipo de interés: [COLOR_WARNING_TEXT]{1_Value}%[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_LOAN">
+			<Text>Préstamo total: {1_Value}[ICON_GOLD]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_LOAN_TT">
+			<Text>Montante principal más los intereses a devolver.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_PAYMENT">
+			<Text>Pago: {1_Value}[ICON_GOLD] por turno durante {2_Duration} turnos.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_PAYMENT_TT">
+			<Text>Acumulable con otros pagos de la deuda.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_CURRENT_MAX">
+			<Text>Deuda actual contraída (Máx.): {1_Current}[ICON_GOLD] ({2_Maximum}[ICON_GOLD])</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_CURRENT_MAX_TT">
+			<Text>Ya se ha concedido el préstamo máximo disponible para esta era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_DEBT_INTEREST">
+			<Text>Tipo de interés actual: {1_Value}%</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ACCEPT_DEBT">
+			<Text>Emitir deuda</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICIES_BUTTON">
+			<Text>Adoptar política</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_CHOOSE_POLICY">
+			<Text>Adoptar política</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_CURRENT">
+			<Text>Política adoptada</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_NONE">
+			<Text>Ninguna</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_SLAVERY">
+			<Text>Esclavismo</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_CURRENCY">
+			<Text>Acuñación estandarizada</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_MANOR_SYSTEM">
+			<Text>Régimen señorial</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_GUILD_SYSTEM">
+			<Text>Gremios</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_LAISSEZ_FAIRE">
+			<Text>Laissez faire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_MERCANTILISM">
+			<Text>Mercantilismo</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_MARXISM">
+			<Text>Marxismo</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_WAR_ECONOMY">
+			<Text>Economía de guerra</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_KEYNESIANISM">
+			<Text>Keynesianismo</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_BANKING">
+			<Text>Reforma bancaria</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_FREE_TRADE">
+			<Text>Librecambismo</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_MONETARISM">
+			<Text>Monetarismo</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_STATE_SOCIALISM">
+			<Text>Socialismo estatal</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_UNEMPLOYMENT_TT">
+			<Text>Modifica la tasa de paro en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_INTEREST_RATE_TT">
+			<Text>Fija los tipos de interés al {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_DEBT_LIMIT_TT">
+			<Text>Incrementa el techo de endeudamiento en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_DEBT_PAYMENT_TT">
+			<Text>Modifica los pagos de la deuda en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_CONSUMER_GDP_TT">
+			<Text>Modifica el PIB de consumo en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_CONSUMER_HAPPINESS_TT">
+			<Text>Modifica el efecto que tiene la felicidad sobre el PIB de consumo en un {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_GOVERNMENT_GDP_TT">
+			<Text>Modifica el PIB gubernamental en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_GOV_TO_CONSUMER_TT">
+			<Text>Incrementa el PIB de consumo sumándole el {1_Value}% del PIB gubernamental.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_GOV_TO_INVESTMENT_TT">
+			<Text>Incrementa el PIB de inversión sumándole el {1_Value}% del PIB gubernamental.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_CONSUMER_TO_INVESTMENT_TT">
+			<Text>Incrementa el PIB de inversión sumándole el {1_Value}% del PIB de consumo.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_INVESTMENT_GDP_TT">
+			<Text>Modifica el PIB de inversión en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_SPECIALIST_INVEST_TT">
+			<Text>El rendimiento de los especialistas aumenta en {1_Value}% y se añade al PIB no gubernamental (esta bonificación decrece con cada era).</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_IMPORT_GDP_TT">
+			<Text>Modifica el PIB de importación en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_EXPORT_GDP_TT">
+			<Text>Modifica el PIB de exportación en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_INCOME_REVENUE_TT">
+			<Text>Modifica los ingresos por impuestos sobre la renta en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_BUSINESS_REVENUE_TT">
+			<Text>Modifica la recaudación por impuesto de sociedades en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_TRADE_REVENUE_TT">
+			<Text>Modifica la recaudación por impuestos comerciales un {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_POLICIES_EXPENSE_TT">
+			<Text>Modifica el gasto en políticas gubernamentales en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_GOVERNMENT_EXPENSE_TT">
+			<Text>Modifica el gasto de los edificios gubernamentales en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_MILITARY_EXPENSE_TT">
+			<Text>Modifica los gastos militares en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_CITY_EXPENSE_TT">
+			<Text>Modifica el gasto en ciudades en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_POLITICAL_EXPENSE_TT">
+			<Text>Modifica el desgaste de [ICON_CULTURE] capital político en {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_INCOME_TAX_TT">
+			<Text>Fija el impuesto sobre la renta al {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_BUSINESS_TAX_TT">
+			<Text>Fija el impuesto de sociedades al {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_TRADE_TAX_TT">
+			<Text>Fija las tasas de aranceles de exportación e importación al {1_Value}%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_IMPROVEMENT_TAX_TT">
+			<Text>Cada {1_Type} aumenta la recaudación tributaria en {2_Value}[ICON_GOLD] Oro.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_OPEN_BORDER_GDP_TT">
+			<Text>Incrementa el PIB no gubernamental un {1_Value}% por cada acuerdo de Apertura de Fronteras.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_ENEMY_GDP_TT">
+			<Text>El PIB gubernamental, de inversión, y comercial aumentan un {1_Value}% por cada enemigo.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_ALLIED_GDP_TT">
+			<Text>Incrementa el PIB no gubernamental un {1_Value}% por cada ciudad-estado aliada.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_NO_TRADE_DEFICIT_TT">
+			<Text>Elimina cualquier déficit en la balanza comercial.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_NO_TAX_PENALTY_TT">
+			<Text>Los impuestos por encima del 45% no reducirán el PIB.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_BULL_MARKET_TT">
+			<Text>Fija la tasa de crecimiento del mercado por turno en un intervalo del 5% al 10%.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_STABILITY_TT">
+			<Text>Entra en [COLOR_POSITIVE_TEXT]estabilidad[ENDCOLOR] económica permanente (1% de crecimiento).</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_DEPRESSION_CHANCE_TT">
+			<Text>Modifica la posibilidad de caer en una depresión económica un {1_Value}%.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_DISABLED_ERA_TT">
+			<Text>[COLOR_WARNING_TEXT]Disponible a partir de la {1_Era}.[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_POLICY_DISABLED_TOTAL_TT">
+			<Text>[COLOR_WARNING_TEXT]Available upon entering the final era.[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ADJUST_POLICY_CHOOSE_TURN">
+			<Text>[COLOR_WARNING_TEXT]Podrás adoptar una nueva política en el turno {1_Turn}.[ENDCOLOR]</Text>
+		</Row>
+		<!--Event-->
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_EVENT_DEPRESSION">
+			<Text>[COLOR_WARNING_TEXT]LA GRAN DEPRESIÓN DE {1_Year}[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_EVENT_DEPRESSION_SEVERE">
+			<Text>[COLOR_WARNING_TEXT]EL PÁNICO DE {1_Year}[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_EVENT_DEPRESSION_GLOBAL">
+			<Text>[COLOR_WARNING_TEXT]LA GRAN DEPRESIÓN DE {1_Year}[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_EVENT_HELP">
+			<Text>
+				Nuestro sistema financiero ha quedado destrozado por la especulación desenfrenada y una gestión económica deficiente. Se calcula que la economía se hundirá un {1_Percent} durante al menos {2_Turns} turnos.
+				[NEWLINE][NEWLINE]Esta crisis puede persistir indefinidamente a menos que tomemos medidas para sanear la economía.
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_EVENT_GLOBAL_HELP">
+			<Text>
+				La economía mundial ha entrado en una gran recesión que ha provocado que nuestra economía se contraiga un {1_Percent}.
+				[NEWLINE][NEWLINE]Los economistas predicen que nuestra economía quedará debilitada por al menos {2_Turns} turnos, y nos recomiendan tomar medidas como incrementar el gasto público, bajar los impuestos o diseñar nuevas políticas para reactivar la economía.
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ERA_UPDATE">
+			<Text>[COLOR_WARNING_TEXT]ACTUALIZACIÓN ECONÓMICA[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ERA_UPDATE_TAX">
+			<Text>
+				Hemos entrado en la {1_Era}, y nuestra civilización ha empezado a desarrollar una economía. Ahora podemos recaudar impuestos con los que financiar nuestros crecientes gastos gubernamentales. Cuidado con las subidas de impuestos, pues disminuirán el capital político [ICON_CULTURE] de nuestra nación, y elige sabiamente, pues podemos optar por políticas económicas que complementen los objetivos de nuestra civilización o que los obstaculicen por completo. A medida que avancemos a través de las distintas eras, dispondremos de una mayor variedad de políticas entre las que poder escoger.
+				[NEWLINE][NEWLINE]Abre el [ICON_ECONOMICS] Informe Económico para más detalles, modificar los impuestos o elegir tu política económica.
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ERA_UPDATE_DEBT">
+			<Text>
+				Hemos entrado en el {1_Era}, y nuestra civilización cuenta ya con una economía muy dinámica. La especulación en los mercados cada vez afectará más a nuestro PIB de inversión, y los bancos podrán prestar a nuestro gobierno dinero que tendremos que devolver con ciertos intereses.
+				[NEWLINE][NEWLINE]Abre el [ICON_ECONOMICS] Informe Económico para más detalles, modificar los impuestos o emitir deuda.
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_FA_ECON_ERA_UPDATE_TAX_EXPANDED">
+			<Text>
+				Hemos entrado en la {1_Era}, y nuestra civilización tiene una economía cada vez más compleja y diversificada. La inflación, el desempleo o el gasto de los consumidores pasarán a tener una mayor influencia en nuestro PIB, para lo que podremos modificar los impuestos por sectores. Si nuestra economía sufre una recesión prolongada, puede caer en una gran depresión.
+				[NEWLINE][NEWLINE]Abre el [ICON_ECONOMICS] Informe Económico para más detalles.
+			</Text>
+		</Row>
+	</Language_es_ES>
+</GameData>
