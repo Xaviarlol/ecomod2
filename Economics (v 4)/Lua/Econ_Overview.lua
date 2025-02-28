@@ -10,7 +10,6 @@ include("Econ_Math.lua")
 include("Econ_Global.lua")
 --------------------------------------------------------------------
 local g_OurSummaryManager = InstanceManager:new( "OurSummaryInstance", "Base", Controls.OurSummaryStack)
-local g_OurEconomyInstance = InstanceManager:new( "OurEconomyInstance", "Base", Controls.OurSummaryStack)  -- This is the missing line!
 local g_WorldEconomyManager = InstanceManager:new("WorldEconomyInstance", "Base", Controls.WorldEconomyStack)
 local g_HistoricManager = InstanceManager:new( "HistoricInstance", "Base", Controls.HistoricStack)
 local g_Policies01Manager = InstanceManager:new("PolicyInstance", "Button", Controls.PolicyStack01)
