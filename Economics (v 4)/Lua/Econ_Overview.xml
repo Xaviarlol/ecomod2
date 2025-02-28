@@ -251,170 +251,80 @@
 		<!-- Content Panel -->
 		<Box Size ="953,459" Color="0,0,0,0" Offset="19,77">
 
-			<!-- Our Economy Tab Content-->
-			<Box Size="953,459" Color="0,0,0,0" ID="OurEconomyPanel" Hidden="1">
-				<Label Anchor="C,C" String="TXT_KEY_POPUP_FA_ECON_OUR_NONE" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"  ID="NoEconomy"/>
-				
-				<Stack Anchor="L,T" Offset="0,0" StackGrowth="Bottom" Padding="2" ID="InfoStack">
-					<!-- GDP Details Content-->
-					<Label Anchor="C,T" Offset="-10,9" String="Growth Index" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_INDEX_TT" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"  ID="OurGrowthIndex"/>
-					<Image Anchor="L,T" Offset="-9,0" Texture="HorizontalTrim.dds" Size="971,5" />
-					<ScrollPanel Vertical="1" Size="935,120" Offset="0,0" AutoScrollBar="0" ID="OurSummaryScrollPanel" Hidden="1">
-						<!-- Scroll Controls -->
-						<ScrollBar Style="VertSlider" Length="111" Anchor="R,C" AnchorSide="O,I"/>
-						<UpButton Style="ScrollBarUp" Anchor="R,T" AnchorSide="O,I"/>
-						<DownButton Style="ScrollBarDown" Anchor="R,B" AnchorSide="O,I"/>
-						<Stack StackGrowth="Bottom" ID="OurSummaryStack" Padding="4">
-							<Box Size="935,23" Color="0,0,0,150">
-								<Stack Anchor="L,T" StackGrowth="Right">
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="100,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_YEAR" ToolTip="" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="50,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_GROWTH" ToolTip="TXT_KEY_POPUP_FA_ECON_GROWTH_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_TOTAL_GDP" ToolTip="TXT_KEY_POPUP_FA_ECON_TOTAL_GDP_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_CONSUMER_GDP" ToolTip="TXT_KEY_POPUP_FA_ECON_CONSUMER_GDP_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="40,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_PERCENTAGE" ToolTip="TXT_KEY_POPUP_FA_ECON_PERCENTAGE_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_GOVERNMENT_GDP" ToolTip="TXT_KEY_POPUP_FA_ECON_GOVERNMENT_GDP_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="40,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_PERCENTAGE" ToolTip="TXT_KEY_POPUP_FA_ECON_PERCENTAGE_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_INVESTMENT_GDP" ToolTip="TXT_KEY_POPUP_FA_ECON_INVESTMENT_GDP_TT" ConsumeMouse="1" ID="InvestmentGDPHelp"/>
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="40,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_PERCENTAGE" ToolTip="TXT_KEY_POPUP_FA_ECON_PERCENTAGE_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_TRADE_GDP" ToolTip="TXT_KEY_POPUP_FA_ECON_TRADE_GDP_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="40,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_PERCENTAGE" ToolTip="TXT_KEY_POPUP_FA_ECON_PERCENTAGE_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="60,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_UNEMPLOYMENT" ToolTip="TXT_KEY_POPUP_FA_ECON_UNEMPLOYMENT_TT" ConsumeMouse="1" />
-									</Box>
-								</Stack>
-								<Image Anchor="L,T" Offset="0,24" TextureOffset="50,0" Texture="bar900x2.dds" Size="468,1" />
-								<Image Anchor="R,T" Offset="0,24" TextureOffset="368,0" Texture="bar900x2.dds" Size="467,1" />
-							</Box>
+			<!-- OUR ECONOMY TAB CONTENT: New Portrait Layout -->
+			<Box Size="600,800" ID="OurEconomyPanel" Hidden="1">
+				<Label Anchor="L,T" Offset="20,20" String="Our Economy (Portrait Layout)" Font="TwCenMT20" />
+				<ScrollPanel ID="OurEconomyScrollPanel" Size="580,720" Anchor="L,T" Offset="10,60" AutoScrollBar="1">
+					<Stack ID="OurEconomyStack" StackGrowth="Bottom" Padding="5">
+						
+						<!-- Row for Year -->
+						<Stack ID="YearRow" StackGrowth="Right" Padding="5">
+							<Text String="Year:" Font="TwCenMT16" />
+							<Label ID="YearData1" Font="TwCenMT16" />
+							<Label ID="YearData2" Font="TwCenMT16" />
 						</Stack>
-					</ScrollPanel>
-					
-					<!-- Revenue Content-->
-					<Image Anchor="L,T" Offset="-9,0" Texture="HorizontalTrim.dds" Size="971,5" />
-					<Label Anchor="C,T" Offset="0,9" String="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"/>
-					<Image Anchor="L,T" Offset="-9,0" Texture="HorizontalTrim.dds" Size="971,5" />
-					<ScrollPanel Vertical="1" Size="935,120" Offset="0,0" AutoScrollBar="0" ID="OurRevenueScrollPanel" Hidden="1">
-						<!-- Scroll Controls -->
-						<ScrollBar Style="VertSlider" Length="111" Anchor="R,C" AnchorSide="O,I"/>
-						<UpButton Style="ScrollBarUp" Anchor="R,T" AnchorSide="O,I"/>
-						<DownButton Style="ScrollBarDown" Anchor="R,B" AnchorSide="O,I"/>
-						<Stack StackGrowth="Bottom" ID="OurRevenueStack" Padding="4">
-							<Box Size="935,23" Color="0,0,0,150">
-								<Stack Anchor="L,T" StackGrowth="Right">
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="100,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_YEAR" ToolTip="" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_TOTAL" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_TOTAL_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="50,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_TAX_AVERAGE" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_TAX_AVERAGE_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_INCOME" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_INCOME_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="50,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_TAX_INCOME" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_TAX_INCOME_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_BUSINESS" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_BUSINESS_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="50,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_TAX_BUSINESS" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_TAX_BUSINESS_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_IMPORTS" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_IMPORTS_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="50,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_TAX_IMPORTS" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_TAX_IMPORTS_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_EXPORTS" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_REVENUE_EXPORTS_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="50,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_TAX_EXPORTS" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_TAX_EXPORTS_TT" ConsumeMouse="1" />
-									</Box>
-								</Stack>
-								<Image Anchor="L,T" Offset="0,24" TextureOffset="50,0" Texture="bar900x2.dds" Size="468,1" />
-								<Image Anchor="R,T" Offset="0,24" TextureOffset="368,0" Texture="bar900x2.dds" Size="467,1" />
-							</Box>
+						
+						<!-- Row for Growth -->
+						<Stack ID="GrowthRow" StackGrowth="Right" Padding="5">
+							<Text String="Growth:" Font="TwCenMT16" />
+							<Label ID="GrowthData1" Font="TwCenMT16" />
+							<Label ID="GrowthData2" Font="TwCenMT16" />
 						</Stack>
-					</ScrollPanel>
-
-					<!-- Expenses Content-->
-					<Image Anchor="L,T" Offset="-9,0" Texture="HorizontalTrim.dds" Size="971,5" />
-					<Label Anchor="C,T" Offset="0,9" String="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"/>
-					<Image Anchor="L,T" Offset="-9,0" Texture="HorizontalTrim.dds" Size="971,5" />
-					<ScrollPanel Vertical="1" Size="935,120" Offset="0,0" AutoScrollBar="0" ID="OurExpenseScrollPanel" Hidden="1">
-						<!-- Scroll Controls -->
-						<ScrollBar Style="VertSlider" Length="111" Anchor="R,C" AnchorSide="O,I"/>
-						<UpButton Style="ScrollBarUp" Anchor="R,T" AnchorSide="O,I"/>
-						<DownButton Style="ScrollBarDown" Anchor="R,B" AnchorSide="O,I"/>
-						<Stack StackGrowth="Bottom" ID="OurExpenseStack" Padding="4">
-							<Box Size="935,23" Color="0,0,0,150">
-								<Stack Anchor="L,T" StackGrowth="Right">
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="100,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_YEAR" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="90,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_TOTAL" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_TOTAL_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="90,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_POLICY" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_POLICY_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="90,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_MILITARY" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_MILITARY_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="90,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_BUILDINGS" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_BUILDINGS_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="90,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_CITIES" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_CITIES_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="90,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_DEBT_PAYMENT" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_DEBT_PAYMENT_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="90,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_CULTURE" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_CULTURE_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="90,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_DEBT_TOTAL" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_DEBT_TOTAL_TT" ConsumeMouse="1" />
-									</Box>
-									<Box Anchor="L,T" Color="0,0,0,0"  Size="90,24" >
-										<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_INTEREST_RATE" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_EXPENSES_INTEREST_RATE_TT" ConsumeMouse="1" />
-									</Box>
-								</Stack>
-								<Image Anchor="L,T" Offset="0,24" TextureOffset="50,0" Texture="bar900x2.dds" Size="468,1" />
-								<Image Anchor="R,T" Offset="0,24" TextureOffset="368,0" Texture="bar900x2.dds" Size="467,1" />
-							</Box>
+						
+						<!-- Row for Total GDP -->
+						<Stack ID="TotalGDPRow" StackGrowth="Right" Padding="5">
+							<Text String="Total GDP:" Font="TwCenMT16" />
+							<Label ID="GDPData1" Font="TwCenMT16" />
+							<Label ID="GDPData2" Font="TwCenMT16" />
 						</Stack>
-					</ScrollPanel>
-				</Stack>
-				
+						
+						<!-- Row for Consumer GDP -->
+						<Stack ID="ConsumerGDPRow" StackGrowth="Right" Padding="5">
+							<Text String="Consumer GDP:" Font="TwCenMT16" />
+							<Label ID="ConsumerGDPData1" Font="TwCenMT16" />
+							<Label ID="ConsumerGDPData2" Font="TwCenMT16" />
+						</Stack>
+						
+						<!-- Row for Government GDP -->
+						<Stack ID="GovernmentGDPRow" StackGrowth="Right" Padding="5">
+							<Text String="Government GDP:" Font="TwCenMT16" />
+							<Label ID="GovGDPData1" Font="TwCenMT16" />
+							<Label ID="GovGDPData2" Font="TwCenMT16" />
+						</Stack>
+						
+						<!-- Row for Investment GDP -->
+						<Stack ID="InvestmentGDPRow" StackGrowth="Right" Padding="5">
+							<Text String="Investment GDP:" Font="TwCenMT16" />
+							<Label ID="InvestmentGDPData1" Font="TwCenMT16" />
+							<Label ID="InvestmentGDPData2" Font="TwCenMT16" />
+						</Stack>
+						
+						<!-- Row for Trade GDP -->
+						<Stack ID="TradeGDPRow" StackGrowth="Right" Padding="5">
+							<Text String="Trade GDP:" Font="TwCenMT16" />
+							<Label ID="TradeGDPData1" Font="TwCenMT16" />
+							<Label ID="TradeGDPData2" Font="TwCenMT16" />
+						</Stack>
+						
+						<!-- Row for Unemployment -->
+						<Stack ID="UnemploymentRow" StackGrowth="Right" Padding="5">
+							<Text String="Unemployment:" Font="TwCenMT16" />
+							<Label ID="UnemploymentData1" Font="TwCenMT16" />
+							<Label ID="UnemploymentData2" Font="TwCenMT16" />
+						</Stack>
+						
+						<!-- Row for Policy -->
+						<Stack ID="PolicyRow" StackGrowth="Right" Padding="5">
+							<Text String="Policy:" Font="TwCenMT16" />
+							<Label ID="PolicyData1" Font="TwCenMT16" />
+							<Label ID="PolicyData2" Font="TwCenMT16" />
+						</Stack>
+						
+					</Stack>
+				</ScrollPanel>
 			</Box>
 
-			<!-- World Economy Tab Content-->
+			<!-- WORLD ECONOMY TAB CONTENT (Unchanged) -->
 			<Box Size="953,459" Color="0,0,0,0" ID="WorldEconomyPanel" Hidden="1">
 				<Label Anchor="C,C" String="TXT_KEY_POPUP_FA_ECON_WORLD_NONE" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"  ID="NoWorldEconomy"/>
 				<Stack Anchor="L,T" Offset="0,0" StackGrowth="Bottom" Padding="2" ID="InfoStack">
@@ -429,28 +339,28 @@
 							<Box Anchor="L,T" Color="0,0,0,0" Size="200,24" >
 								<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_CIV_NAME" ConsumeMouse="1" />
 							</Box>
-							<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
+							<Box  Size="110,24" Color="0,0,0,0"  >
 								<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_TOTAL_GDP" ConsumeMouse="1" />
 							</Box>
-							<Box Anchor="L,T" Color="0,0,0,0"  Size="40,24" >
+							<Box  Size="40,24" Color="0,0,0,0"  >
 								<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_GROWTH" ConsumeMouse="1" />
 							</Box>
-							<Box Anchor="L,T" Color="0,0,0,0"  Size="75,24" >
+							<Box  Size="75,24" Color="0,0,0,0"  >
 								<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_GDP_PER_CAPITA" ToolTip="TXT_KEY_POPUP_FA_ECON_GDP_PER_CAPITA_TT" ConsumeMouse="1" />
 							</Box>
-							<Box Anchor="L,T" Color="0,0,0,0"  Size="75,24" >
+							<Box  Size="75,24" Color="0,0,0,0"  >
 								<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_UNEMPLOYMENT" ToolTip="TXT_KEY_POPUP_FA_ECON_UNEMPLOYMENT_TT" ConsumeMouse="1" />
 							</Box>
-							<Box Anchor="L,T" Color="0,0,0,0"  Size="75,24" >
+							<Box  Size="75,24" Color="0,0,0,0"  >
 								<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_TAX_AVERAGE" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_TAX_AVERAGE_TT" ConsumeMouse="1" />
 							</Box>
-							<Box Anchor="L,T" Color="0,0,0,0"  Size="75,24" >
+							<Box  Size="75,24" Color="0,0,0,0"  >
 								<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_BUDGET_TOTAL" ToolTip="TXT_KEY_POPUP_FA_ECON_BUDGET_TOTAL_TT" ConsumeMouse="1" />
 							</Box>
-							<Box Anchor="L,T" Color="0,0,0,0"  Size="90,24" >
+							<Box  Size="90,24" Color="0,0,0,0"  >
 								<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_DEBT_TOTAL" ConsumeMouse="1" />
 							</Box>
-							<Box Anchor="L,T" Color="0,0,0,0"  Size="140,24" >
+							<Box  Size="150,24" Color="0,0,0,0" >
 								<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_POLICY_CURRENT" ConsumeMouse="1" />
 							</Box>
 						</Stack>
@@ -458,62 +368,14 @@
 						<Image Anchor="L,T" Offset="0,24" TextureOffset="50,0" Texture="bar900x2.dds" Size="468,1" />
 						<Image Anchor="R,T" Offset="0,24" TextureOffset="368,0" Texture="bar900x2.dds" Size="467,1" />
 					</Box>
-					<ScrollPanel Vertical="1" Size="935,419" Offset="0,0" AutoScrollBar="0" ID="WorldEconomiesScrollPanel" Hidden="1">
+					<ScrollPanel Vertical="1" Size="935,419" Offset="0,24" AutoScrollBar="0" ID="HistoricScrollPanel" Hidden="1">
 						<!-- Scroll Controls -->
-						<ScrollBar Style="VertSlider" Length="387" Anchor="R,C" AnchorSide="O,I"/>
+						<ScrollBar Style="VertSlider" Length="410" Anchor="R,C" AnchorSide="O,I"/>
 						<UpButton Style="ScrollBarUp" Anchor="R,T" AnchorSide="O,I"/>
 						<DownButton Style="ScrollBarDown" Anchor="R,B" AnchorSide="O,I"/>
-						<Stack StackGrowth="Bottom" ID="WorldEconomyStack" Padding="9" />
+						<Stack StackGrowth="Bottom" ID="HistoricStack" Padding="9" />
 					</ScrollPanel>
-				</Stack>
-			</Box>
-
-			<!-- Economic History Tab Content-->
-			<Box Size="953,459" Color="0,0,0,0" ID="EconomicHistoryPanel" Hidden="1">
-				<Label Anchor="C,C" String="TXT_KEY_POPUP_FA_ECON_HISTORY_NONE" Font="TwCenMT18" WrapWidth="800" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"  ID="NoHistoric"/>
-				<Box Size="935,23" Color="0,0,0,150">
-					<Stack Anchor="L,T" StackGrowth="Right">
-						<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-							<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_YEAR" ConsumeMouse="1" />
-						</Box>
-						<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-							<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_TOTAL_GDP" ToolTip="TXT_KEY_POPUP_FA_ECON_TOTAL_GDP_TT" ConsumeMouse="1" />
-						</Box>
-						<Box Anchor="L,T" Color="0,0,0,0"  Size="40,24" >
-							<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_GROWTH" ToolTip="TXT_KEY_POPUP_FA_ECON_GROWTH_TT" ConsumeMouse="1" />
-						</Box>
-						<Box Anchor="L,T" Color="0,0,0,0"  Size="100,24" >
-							<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_GDP_PER_CAPITA" ToolTip="TXT_KEY_POPUP_FA_ECON_GDP_PER_CAPITA_TT" ConsumeMouse="1" />
-						</Box>
-						<Box Anchor="L,T" Color="0,0,0,0"  Size="75,24" >
-							<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_UNEMPLOYMENT" ToolTip="TXT_KEY_POPUP_FA_ECON_UNEMPLOYMENT_TT" ConsumeMouse="1" />
-						</Box>
-						<Box Anchor="L,T" Color="0,0,0,0"  Size="100,24" >
-							<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_BUDGET_TOTAL" ToolTip="TXT_KEY_POPUP_FA_ECON_BUDGET_TOTAL_TT" ConsumeMouse="1" />
-						</Box>
-						<Box Anchor="L,T" Color="0,0,0,0"  Size="75,24" >
-							<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_TAX_AVERAGE" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_TAX_AVERAGE_TT" ConsumeMouse="1" />
-						</Box>
-						<Box Anchor="L,T" Color="0,0,0,0"  Size="70,24" >
-							<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_OUR_MARKET" ToolTip="TXT_KEY_POPUP_FA_ECON_OUR_MARKET_TT" ConsumeMouse="1" />
-						</Box>
-						<Box Anchor="L,T" Color="0,0,0,0"  Size="100,24" >
-							<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_DEBT_TOTAL" ConsumeMouse="1" />
-						</Box>
-						<Box Anchor="L,T" Color="0,0,0,0"  Size="150,24" >
-							<TextButton Offset="0,1" Anchor="C,C" LeadingOffset="-4" ColorSet="Beige_Black_Alpha" Font="TwCenMT14" FontStyle="Shadow" MouseOverStyle="SoftShadow" String="TXT_KEY_POPUP_FA_ECON_POLICY_CURRENT" ConsumeMouse="1" />
-						</Box>
-					</Stack>
-					<Image Anchor="L,T" Offset="0,24" TextureOffset="50,0" Texture="bar900x2.dds" Size="468,1" />
-					<Image Anchor="R,T" Offset="0,24" TextureOffset="368,0" Texture="bar900x2.dds" Size="467,1" />
 				</Box>
-				<ScrollPanel Vertical="1" Size="935,444" Offset="0,24" AutoScrollBar="0" ID="HistoricScrollPanel" Hidden="1">
-					<!-- Scroll Controls -->
-					<ScrollBar Style="VertSlider" Length="410" Anchor="R,C" AnchorSide="O,I"/>
-					<UpButton Style="ScrollBarUp" Anchor="R,T" AnchorSide="O,I"/>
-					<DownButton Style="ScrollBarDown" Anchor="R,B" AnchorSide="O,I"/>
-					<Stack StackGrowth="Bottom" ID="HistoricStack" Padding="9" />
-				</ScrollPanel>
 			</Box>
 
 		</Box>
