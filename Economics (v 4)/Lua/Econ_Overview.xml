@@ -251,78 +251,84 @@
 		<!-- Content Panel -->
 		<Box Size ="953,459" Color="0,0,0,0" Offset="19,77">
 
-			<!-- OUR ECONOMY TAB CONTENT: New Portrait Layout -->
-			<Box Size="600,800" ID="OurEconomyPanel" Hidden="1">
-				<Label Anchor="L,T" Offset="20,20" String="Our Economy (Portrait Layout)" Font="TwCenMT20" />
-				<ScrollPanel ID="OurEconomyScrollPanel" Size="580,720" Anchor="L,T" Offset="10,60" AutoScrollBar="1">
-					<Stack ID="OurEconomyStack" StackGrowth="Bottom" Padding="5">
-						
-						<!-- Row for Year -->
-						<Stack ID="YearRow" StackGrowth="Right" Padding="5">
-							<Text String="Year:" Font="TwCenMT16" />
-							<Label ID="YearData1" Font="TwCenMT16" />
-							<Label ID="YearData2" Font="TwCenMT16" />
-						</Stack>
-						
-						<!-- Row for Growth -->
-						<Stack ID="GrowthRow" StackGrowth="Right" Padding="5">
-							<Text String="Growth:" Font="TwCenMT16" />
-							<Label ID="GrowthData1" Font="TwCenMT16" />
-							<Label ID="GrowthData2" Font="TwCenMT16" />
-						</Stack>
-						
-						<!-- Row for Total GDP -->
-						<Stack ID="TotalGDPRow" StackGrowth="Right" Padding="5">
-							<Text String="Total GDP:" Font="TwCenMT16" />
-							<Label ID="GDPData1" Font="TwCenMT16" />
-							<Label ID="GDPData2" Font="TwCenMT16" />
-						</Stack>
-						
-						<!-- Row for Consumer GDP -->
-						<Stack ID="ConsumerGDPRow" StackGrowth="Right" Padding="5">
-							<Text String="Consumer GDP:" Font="TwCenMT16" />
-							<Label ID="ConsumerGDPData1" Font="TwCenMT16" />
-							<Label ID="ConsumerGDPData2" Font="TwCenMT16" />
-						</Stack>
-						
-						<!-- Row for Government GDP -->
-						<Stack ID="GovernmentGDPRow" StackGrowth="Right" Padding="5">
-							<Text String="Government GDP:" Font="TwCenMT16" />
-							<Label ID="GovGDPData1" Font="TwCenMT16" />
-							<Label ID="GovGDPData2" Font="TwCenMT16" />
-						</Stack>
-						
-						<!-- Row for Investment GDP -->
-						<Stack ID="InvestmentGDPRow" StackGrowth="Right" Padding="5">
-							<Text String="Investment GDP:" Font="TwCenMT16" />
-							<Label ID="InvestmentGDPData1" Font="TwCenMT16" />
-							<Label ID="InvestmentGDPData2" Font="TwCenMT16" />
-						</Stack>
-						
-						<!-- Row for Trade GDP -->
-						<Stack ID="TradeGDPRow" StackGrowth="Right" Padding="5">
-							<Text String="Trade GDP:" Font="TwCenMT16" />
-							<Label ID="TradeGDPData1" Font="TwCenMT16" />
-							<Label ID="TradeGDPData2" Font="TwCenMT16" />
-						</Stack>
-						
-						<!-- Row for Unemployment -->
-						<Stack ID="UnemploymentRow" StackGrowth="Right" Padding="5">
-							<Text String="Unemployment:" Font="TwCenMT16" />
-							<Label ID="UnemploymentData1" Font="TwCenMT16" />
-							<Label ID="UnemploymentData2" Font="TwCenMT16" />
-						</Stack>
-						
-						<!-- Row for Policy -->
-						<Stack ID="PolicyRow" StackGrowth="Right" Padding="5">
-							<Text String="Policy:" Font="TwCenMT16" />
-							<Label ID="PolicyData1" Font="TwCenMT16" />
-							<Label ID="PolicyData2" Font="TwCenMT16" />
-						</Stack>
-						
-					</Stack>
-				</ScrollPanel>
-			</Box>
+			<!-- OUR ECONOMY TAB CONTENT (PORTRAIT LAYOUT) -->
+<Box Size="953,459" Color="0,0,0,0" ID="OurEconomyPanel" Hidden="1">
+
+    <!-- We'll hide the "NoEconomy" label by default, or remove it if you prefer -->
+    <Label Anchor="C,C" String="TXT_KEY_POPUP_FA_ECON_OUR_NONE" Font="TwCenMT18"
+           ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="NoEconomy" Hidden="1" />
+
+    <!-- Single scroll panel for portrait rows -->
+    <ScrollPanel ID="OurEconomyScrollPanel" Size="935,439" Anchor="L,T" Offset="10,10" AutoScrollBar="1">
+      <Stack ID="OurEconomyStack" StackGrowth="Bottom" Padding="10">
+
+        <!-- Row for Year -->
+        <Stack ID="YearRow" StackGrowth="Right" Padding="5">
+          <Text String="Year:" Font="TwCenMT16" />
+          <Label ID="YearData1" Font="TwCenMT16" />
+          <Label ID="YearData2" Font="TwCenMT16" />
+        </Stack>
+
+        <!-- Row for Growth -->
+        <Stack ID="GrowthRow" StackGrowth="Right" Padding="5">
+          <Text String="Growth:" Font="TwCenMT16" />
+          <Label ID="GrowthData1" Font="TwCenMT16" />
+          <Label ID="GrowthData2" Font="TwCenMT16" />
+        </Stack>
+
+        <!-- Row for Total GDP -->
+        <Stack ID="TotalGDPRow" StackGrowth="Right" Padding="5">
+          <Text String="Total GDP:" Font="TwCenMT16" />
+          <Label ID="GDPData1" Font="TwCenMT16" />
+          <Label ID="GDPData2" Font="TwCenMT16" />
+        </Stack>
+
+        <!-- Row for Consumer GDP -->
+        <Stack ID="ConsumerGDPRow" StackGrowth="Right" Padding="5">
+          <Text String="Consumer GDP:" Font="TwCenMT16" />
+          <Label ID="ConsumerGDPData1" Font="TwCenMT16" />
+          <Label ID="ConsumerGDPData2" Font="TwCenMT16" />
+        </Stack>
+
+        <!-- Row for Government GDP -->
+        <Stack ID="GovernmentGDPRow" StackGrowth="Right" Padding="5">
+          <Text String="Government GDP:" Font="TwCenMT16" />
+          <Label ID="GovGDPData1" Font="TwCenMT16" />
+          <Label ID="GovGDPData2" Font="TwCenMT16" />
+        </Stack>
+
+        <!-- Row for Investment GDP -->
+        <Stack ID="InvestmentGDPRow" StackGrowth="Right" Padding="5">
+          <Text String="Investment GDP:" Font="TwCenMT16" />
+          <Label ID="InvestmentGDPData1" Font="TwCenMT16" />
+          <Label ID="InvestmentGDPData2" Font="TwCenMT16" />
+        </Stack>
+
+        <!-- Row for Trade GDP -->
+        <Stack ID="TradeGDPRow" StackGrowth="Right" Padding="5">
+          <Text String="Trade GDP:" Font="TwCenMT16" />
+          <Label ID="TradeGDPData1" Font="TwCenMT16" />
+          <Label ID="TradeGDPData2" Font="TwCenMT16" />
+        </Stack>
+
+        <!-- Row for Unemployment -->
+        <Stack ID="UnemploymentRow" StackGrowth="Right" Padding="5">
+          <Text String="Unemployment:" Font="TwCenMT16" />
+          <Label ID="UnemploymentData1" Font="TwCenMT16" />
+          <Label ID="UnemploymentData2" Font="TwCenMT16" />
+        </Stack>
+
+        <!-- Row for Policy -->
+        <Stack ID="PolicyRow" StackGrowth="Right" Padding="5">
+          <Text String="Policy:" Font="TwCenMT16" />
+          <Label ID="PolicyData1" Font="TwCenMT16" />
+          <Label ID="PolicyData2" Font="TwCenMT16" />
+        </Stack>
+
+      </Stack>
+    </ScrollPanel>
+</Box>
+
 
 			<!-- WORLD ECONOMY TAB CONTENT (Unchanged) -->
 			<Box Size="953,459" Color="0,0,0,0" ID="WorldEconomyPanel" Hidden="1">
