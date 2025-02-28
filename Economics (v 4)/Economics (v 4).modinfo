@@ -7,7 +7,7 @@
 [NEWLINE][NEWLINE]Enjoy prosperity for astute economic management, but face a new disaster -- the Depression -- if your economy enters a prolonged downturn.</Description>
     <Authors>FramedArchitecure</Authors>
     <HideSetupGame>0</HideSetupGame>
-    <AffectsSavedGames>1</AffectsSavedGames>
+    <AffectsSavedGames>0</AffectsSavedGames>
     <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
     <SupportsSinglePlayer>1</SupportsSinglePlayer>
     <SupportsMultiplayer>1</SupportsMultiplayer>
