@@ -612,17 +612,22 @@ Controls.DebtButton:RegisterCallback( Mouse.eLClick, OnIssueDebt )
 --------------------------------------------------------------------
 --Panel Content
 --------------------------------------------------------------------
--- BEGIN UPDATED RefreshOurEconomy (Portrait Layout)
+-- BEGIN UPDATED RefreshOurEconomy (Portrait Layout within 953x459)
 function RefreshOurEconomy()
     if not g_Economy or #g_Economy < 2 then
+        -- Not enough data; hide the scroll panel, show "NoEconomy"
         Controls.OurEconomyScrollPanel:SetHide(true)
         Controls.NoEconomy:SetHide(false)
         return
     end
 
+    Controls.NoEconomy:SetHide(true)
+    Controls.OurEconomyScrollPanel:SetHide(false)
+
     local current = g_Economy[1]
     local previous = g_Economy[2]
 
+    -- YEAR
     if Controls.YearData1 then
         Controls.YearData1:SetText( date(current.iYear) )
     end
@@ -630,6 +635,7 @@ function RefreshOurEconomy()
         Controls.YearData2:SetText( date(previous.iYear) )
     end
 
+    -- GROWTH
     if Controls.GrowthData1 then
         Controls.GrowthData1:SetText( percent(current.fGDP_Growth, 1) )
     end
@@ -637,6 +643,7 @@ function RefreshOurEconomy()
         Controls.GrowthData2:SetText( percent(previous.fGDP_Growth, 1) )
     end
 
+    -- TOTAL GDP
     if Controls.GDPData1 then
         Controls.GDPData1:SetText( comma(current.iGDP_Total) )
     end
@@ -644,6 +651,7 @@ function RefreshOurEconomy()
         Controls.GDPData2:SetText( comma(previous.iGDP_Total) )
     end
 
+    -- CONSUMER GDP
     if Controls.ConsumerGDPData1 then
         Controls.ConsumerGDPData1:SetText( comma(current.iGDP_Consumer) )
     end
@@ -651,6 +659,7 @@ function RefreshOurEconomy()
         Controls.ConsumerGDPData2:SetText( comma(previous.iGDP_Consumer) )
     end
 
+    -- GOVERNMENT GDP
     if Controls.GovGDPData1 then
         Controls.GovGDPData1:SetText( comma(current.iGDP_Government) )
     end
@@ -658,6 +667,7 @@ function RefreshOurEconomy()
         Controls.GovGDPData2:SetText( comma(previous.iGDP_Government) )
     end
 
+    -- INVESTMENT GDP
     if Controls.InvestmentGDPData1 then
         Controls.InvestmentGDPData1:SetText( comma(current.iGDP_Investment) )
     end
@@ -665,6 +675,7 @@ function RefreshOurEconomy()
         Controls.InvestmentGDPData2:SetText( comma(previous.iGDP_Investment) )
     end
 
+    -- TRADE GDP
     if Controls.TradeGDPData1 then
         Controls.TradeGDPData1:SetText( comma(current.iGDP_Trade) )
     end
@@ -672,6 +683,7 @@ function RefreshOurEconomy()
         Controls.TradeGDPData2:SetText( comma(previous.iGDP_Trade) )
     end
 
+    -- UNEMPLOYMENT
     if Controls.UnemploymentData1 then
         Controls.UnemploymentData1:SetText( percent(current.fUnemploymentRate, 1) )
     end
@@ -679,15 +691,13 @@ function RefreshOurEconomy()
         Controls.UnemploymentData2:SetText( percent(previous.fUnemploymentRate, 1) )
     end
 
+    -- POLICY
     if Controls.PolicyData1 then
         Controls.PolicyData1:SetText( GetPolicyString(current.iPolicyID) )
     end
     if Controls.PolicyData2 then
         Controls.PolicyData2:SetText( GetPolicyString(previous.iPolicyID) )
     end
-
-    Controls.OurEconomyScrollPanel:SetHide(false)
-    Controls.NoEconomy:SetHide(true)
 end
 g_Tabs["OurEconomy"].RefreshContent = RefreshOurEconomy
 -- END UPDATED RefreshOurEconomy
