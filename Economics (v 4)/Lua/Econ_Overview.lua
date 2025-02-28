@@ -10,8 +10,6 @@ include("Econ_Math.lua")
 include("Econ_Global.lua")
 --------------------------------------------------------------------
 local g_OurSummaryManager = InstanceManager:new( "OurSummaryInstance", "Base", Controls.OurSummaryStack)
-local g_OurRevenueManager = InstanceManager:new( "OurRevenueInstance", "Base", Controls.OurRevenueStack)
-local g_OurExpenseManager = InstanceManager:new( "OurExpenseInstance", "Base", Controls.OurExpenseStack)
 local g_WorldEconomyManager = InstanceManager:new("WorldEconomyInstance", "Base", Controls.WorldEconomyStack)
 local g_HistoricManager = InstanceManager:new( "HistoricInstance", "Base", Controls.HistoricStack)
 local g_Policies01Manager = InstanceManager:new("PolicyInstance", "Button", Controls.PolicyStack01)
@@ -613,93 +611,66 @@ Controls.DebtButton:RegisterCallback( Mouse.eLClick, OnIssueDebt )
 --Panel Content
 --------------------------------------------------------------------
 function RefreshOurEconomy()
-	g_OurSummaryManager:ResetInstances()
-	g_OurRevenueManager:ResetInstances()
-	g_OurExpenseManager:ResetInstances()
+    g_OurSummaryManager:ResetInstances()
 
-	if g_Economy then
-		local bFirstEntry = true
-		
-		for i,v in ipairs(g_Economy) do
-			
-			if bFirstEntry then
-				local strGrowth = locale("TXT_KEY_POPUP_FA_ECON_OUR_INDEX", GetGrowthString(v.fGDP_Growth) ) 
-				Controls.OurGrowthIndex:SetText( strGrowth )
-				if v.bEnableMarkets then
-					local strMarket = locale("TXT_KEY_POPUP_FA_ECON_INVESTMENT_GDP_MARKET_TT", percent(v.fMarketRate, 1))
-					Controls.InvestmentGDPHelp:SetToolTipString( strMarket )
-				end
-				bFirstEntry = false
-			end
+    if g_Economy then
+        local bFirstEntry = true
+        local plotData = {}  -- Store data for GDP growth chart
 
-			local summaryEntry = g_OurSummaryManager:GetInstance()
-			
-			summaryEntry.SummaryYear:SetText( date(v.iYear) )
-			summaryEntry.Growth:SetText( percent(v.fGDP_Growth, 1) )
-			summaryEntry.TotalGDP:SetText( comma(v.iGDP_Total) )
-			summaryEntry.ConsumerGDP:SetText( comma(v.iGDP_Consumer) )
-			summaryEntry.ConsumerPercent:SetText( percent((v.iGDP_Consumer/v.iGDP_Total), 0) )
-			summaryEntry.GovernmentGDP:SetText( comma(v.iGDP_Government) )
-			summaryEntry.GovernmentPercent:SetText( percent((v.iGDP_Government/v.iGDP_Total), 0) )
-			summaryEntry.InvestmentGDP:SetText( comma(v.iGDP_Investment) )
-			summaryEntry.InvestmentPercent:SetText( percent((v.iGDP_Investment/v.iGDP_Total), 0) )
-			summaryEntry.TradeGDP:SetText( comma(v.iGDP_Trade) )
-			summaryEntry.TradePercent:SetText( percent((v.iGDP_Trade/v.iGDP_Total), 0) )
-			summaryEntry.Unemployment:SetText( percent(v.fUnemploymentRate, 1) )
+        for i, v in ipairs(g_Economy) do
+            if bFirstEntry then
+                local strGrowth = locale("TXT_KEY_POPUP_FA_ECON_OUR_INDEX", GetGrowthString(v.fGDP_Growth) ) 
+                Controls.OurGrowthIndex:SetText( strGrowth )
+                if v.bEnableMarkets then
+                    local strMarket = locale("TXT_KEY_POPUP_FA_ECON_INVESTMENT_GDP_MARKET_TT", percent(v.fMarketRate, 1))
+                    Controls.InvestmentGDPHelp:SetToolTipString( strMarket )
+                end
+                bFirstEntry = false
+            end
 
-			local revenueEntry = g_OurRevenueManager:GetInstance()
+            local summaryEntry = g_OurSummaryManager:GetInstance()
 
-			revenueEntry.RevenueYear:SetText( date(v.iYear) )
-			revenueEntry.TotalRevenue:SetText( currency(v.iRevenue_Total) )
-			revenueEntry.AverageTax:SetText( percent(v.fTaxRate_Average, 0) )
-			revenueEntry.IncomeRevenue:SetText( currency(v.iRevenue_Income) )
-			revenueEntry.IncomeTax:SetText( percent(v.fTaxRate_Income, 0) )
-			revenueEntry.BusinessRevenue:SetText( currency(v.iRevenue_Business) )
-			revenueEntry.BusinessTax:SetText( percent(v.fTaxRate_Business, 0) )
-			revenueEntry.ImportRevenue:SetText( currency(v.iRevenue_Imports) )
-			revenueEntry.ImportTax:SetText( percent(v.fTaxRate_Imports, 0) )
-			revenueEntry.ExportRevenue:SetText( currency(v.iRevenue_Exports) )
-			revenueEntry.ExportTax:SetText( percent(v.fTaxRate_Exports, 0) )
+            summaryEntry.SummaryYear:SetText(date(v.iYear))
+            summaryEntry.Growth:SetText(percent(v.fGDP_Growth, 1))
 
-			local expenseEntry = g_OurExpenseManager:GetInstance()
-			
-			expenseEntry.ExpenseYear:SetText( date(v.iYear) )
-			expenseEntry.TotalExpense:SetText( currency(v.iExpense_Total) )
-			expenseEntry.PolicyExpense:SetText( currency(v.iExpense_Policy) )
-			expenseEntry.MilitaryExpense:SetText( currency(v.iExpense_Military) )
-			expenseEntry.BuildingExpense:SetText( currency(v.iExpense_Building) )
-			expenseEntry.CityExpense:SetText( currency(v.iExpense_Cities) )
-			expenseEntry.CultureExpense:SetText( culture(v.iExpense_Political) )
-			expenseEntry.TotalDebt:SetText( currency(v.iDebt_Total) )
-			
-			local iDebtPayment = GetDebtPayment(v.iDebt_Payment)
-			expenseEntry.DebtPayment:SetText( currency(iDebtPayment) )
-			expenseEntry.InterestRate:SetText( percent(v.fInterest_Rate, 1) )
-		end
-		
-		Controls.OurSummaryStack:CalculateSize()
-		Controls.OurSummaryStack:ReprocessAnchoring()
-		Controls.OurRevenueScrollPanel:CalculateInternalSize()
-		Controls.OurRevenueStack:CalculateSize()
-		Controls.OurRevenueStack:ReprocessAnchoring()
-		Controls.OurSummaryScrollPanel:CalculateInternalSize()
-		Controls.OurExpenseStack:CalculateSize()
-		Controls.OurExpenseStack:ReprocessAnchoring()
-		Controls.OurExpenseScrollPanel:CalculateInternalSize()
-		
-		Controls.OurSummaryScrollPanel:SetHide(false)
-		Controls.OurRevenueScrollPanel:SetHide(false)
-		Controls.OurExpenseScrollPanel:SetHide(false)
-		Controls.InfoStack:SetHide(false)
-		Controls.NoEconomy:SetHide(true)
-	
-	else
-		Controls.OurSummaryScrollPanel:SetHide(true)
-		Controls.OurRevenueScrollPanel:SetHide(true)
-		Controls.OurExpenseScrollPanel:SetHide(true)
-		Controls.InfoStack:SetHide(true)
-		Controls.NoEconomy:SetHide(false)
-	end
+            -- Combine GDP components into a single string
+            local strGDP = string.format("%s (%s%%)", comma(v.iGDP_Total), percent((v.iGDP_Total / v.iGDP_Total), 0))
+            summaryEntry.TotalGDP:SetText(strGDP)
+
+            -- Combine Revenue components into a single string
+            local strRevenue = string.format("%s (%s%%)", currency(v.iRevenue_Total), percent(v.fTaxRate_Average, 0))
+            summaryEntry.TotalRevenue:SetText(strRevenue)
+
+            -- Combine Expense components into a single string
+            local iExpense = v.iExpense_Total + GetDebtPayment(v.iDebt_Payment)
+            local strExpense = string.format("%s (%s%%)", currency(iExpense), percent(iExpense / v.iRevenue_Total, 0))  -- Assuming you want expenses as a percentage of revenue
+            summaryEntry.TotalExpense:SetText(strExpense)
+
+            summaryEntry.Unemployment:SetText(percent(v.fUnemploymentRate, 1))
+
+            -- Add data for GDP growth chart
+            table.insert(plotData, {x = v.iYear, y = v.fGDP_Growth * 100})  -- Convert growth to percentage
+        end
+
+        -- Configure GDP growth chart
+        Controls.GDPGrowthGraph:SetNumPlots(1)
+        Controls.GDPGrowthGraph:SetPlotType(0, Graph.PlotType.LINE)
+        Controls.GDPGrowthGraph:SetPlotData(0, plotData)
+        Controls.GDPGrowthGraph:SetXAxisTicks(plotData)  -- Use years as X-axis ticks
+
+        Controls.OurSummaryStack:CalculateSize()
+        Controls.OurSummaryStack:ReprocessAnchoring()
+        Controls.OurSummaryScrollPanel:CalculateInternalSize()
+
+        Controls.OurSummaryScrollPanel:SetHide(false)
+        Controls.InfoStack:SetHide(false)
+        Controls.NoEconomy:SetHide(true)
+
+    else
+        Controls.OurSummaryScrollPanel:SetHide(true)
+        Controls.InfoStack:SetHide(true)
+        Controls.NoEconomy:SetHide(false)
+    end
 end
 g_Tabs["OurEconomy"].RefreshContent = RefreshOurEconomy
 --------------------------------------------------------------------
