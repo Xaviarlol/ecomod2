@@ -628,7 +628,7 @@ function RefreshOurEconomy()
                 bFirstEntry = false
             end
 
-            local summaryEntry = g_OurEconomyInstance:GetInstance() -- Corrected line
+            local summaryEntry = g_OurSummaryManager:GetInstance() -- Corrected line
 
             summaryEntry.SummaryYear:SetText(date(v.iYear))
             summaryEntry.Growth:SetText(percent(v.fGDP_Growth, 1))
