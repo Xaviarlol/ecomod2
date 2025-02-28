@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Context ColorSet="Beige_Black_Alpha" Font="TwCenMT16" FontStyle="Shadow" Name="FA_Economics_Overview">
-	<Instance Name="OurEconomyInstance">
+	<Instance Name="OurSummaryInstance">
 		<Container ID="Base" Size="470,330">
 			<Label Anchor="C,T" Offset="0,10" String="" Font="TwCenMT22" FontStyle="SoftShadow" ID="SummaryYear"/>
 			<Label Anchor="C,T" Offset="0,38" String="" FontStyle="Stroke" ID="Growth"/>
