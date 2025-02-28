@@ -1,123 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Context ColorSet="Beige_Black_Alpha" Font="TwCenMT16" FontStyle="Shadow">
-
-	<Instance Name="OurSummaryInstance">
-		<Box Size="930,22" Color="0,0,0,0" ID="Base">
-			<Stack StackGrowth="Right">
-				<Box Color="0,0,0,0"  Size="100,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="SummaryYear" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="Growth" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="TotalGDP" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="ConsumerGDP" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="40,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="ConsumerPercent" />
-				</Box>
-				<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="GovernmentGDP" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="40,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="GovernmentPercent" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="InvestmentGDP" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="40,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="InvestmentPercent" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="TradeGDP" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="40,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="TradePercent" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="60,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="Unemployment" />
-				</Box>
-			</Stack>
-		</Box>
+<Context ColorSet="Beige_Black_Alpha" Font="TwCenMT16" FontStyle="Shadow" Name="FA_Economics_Overview">
+	<Instance Name="OurEconomyInstance">
+		<Container ID="Base" Size="470,330">
+			<Label Anchor="C,T" Offset="0,10" String="" Font="TwCenMT22" FontStyle="SoftShadow" ID="SummaryYear"/>
+			<Label Anchor="C,T" Offset="0,38" String="" FontStyle="Stroke" ID="Growth"/>
+			<Label Anchor="C,T" Offset="0,60" String="" FontStyle="Stroke" ID="TotalGDP"/>
+			<Label Anchor="C,T" Offset="0,82" String="" FontStyle="Stroke" ID="ConsumerGDP"/>
+			<Label Anchor="C,T" Offset="0,104" String="" FontStyle="Stroke" ID="GovernmentGDP"/>
+			<Label Anchor="C,T" Offset="0,126" String="" FontStyle="Stroke" ID="InvestmentGDP"/>
+			<Label Anchor="C,T" Offset="0,148" String="" FontStyle="Stroke" ID="TradeGDP"/>
+			<Label Anchor="C,T" Offset="0,170" String="" FontStyle="Stroke" ID="Unemployment"/>
+			<Label Anchor="C,T" Offset="0,192" String="" FontStyle="Stroke" ID="TotalRevenue"/>
+			<Label Anchor="C,T" Offset="0,214" String="" FontStyle="Stroke" ID="IncomeRevenue"/>
+			<Label Anchor="C,T" Offset="0,236" String="" FontStyle="Stroke" ID="BusinessRevenue"/>
+			<Label Anchor="C,T" Offset="0,258" String="" FontStyle="Stroke" ID="ImportRevenue"/>
+			<Label Anchor="C,T" Offset="0,280" String="" FontStyle="Stroke" ID="ExportRevenue"/>
+			<Label Anchor="C,T" Offset="0,302" String="" FontStyle="Stroke" ID="TotalExpense"/>
+		</Container>
 	</Instance>
-	<Instance Name="OurRevenueInstance">
-		<Box Size="930,22" Color="0,0,0,0" ID="Base">
-			<Stack StackGrowth="Right">
-				<Box Color="0,0,0,0"  Size="100,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="RevenueYear" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="TotalRevenue" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="AverageTax" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="IncomeRevenue" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="IncomeTax" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="BusinessRevenue" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="BusinessTax" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="ImportRevenue" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="ImportTax" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="ExportRevenue" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="ExportTax" />
-				</Box>
+	
+	<Container Size="950,660" ID="MainPanel" Anchor="C,C">
+		<Grid Size="930,40" Offset="10,50" Padding="0,0" Style="Grid9DetailFive140" ID="OurSummaryGrid">
+			<Label Anchor="C,C" Offset="0,0" String="Year" Font="TwCenMT18" FontStyle="SoftShadow" ColorSet="Beige_Black_Alpha"/>
+			<Label Anchor="C,C" Offset="140,0" String="Growth" Font="TwCenMT18" FontStyle="SoftShadow" ColorSet="Beige_Black_Alpha"/>
+			<Label Anchor="C,C" Offset="280,0" String="GDP" Font="TwCenMT18" FontStyle="SoftShadow" ColorSet="Beige_Black_Alpha"/>
+			<Label Anchor="C,C" Offset="420,0" String="Revenue" Font="TwCenMT18" FontStyle="SoftShadow" ColorSet="Beige_Black_Alpha"/>
+			<Label Anchor="C,C" Offset="560,0" String="Expenses" Font="TwCenMT18" FontStyle="SoftShadow" ColorSet="Beige_Black_Alpha"/>
+			<Label Anchor="C,C" Offset="700,0" String="Unemployment" Font="TwCenMT18" FontStyle="SoftShadow" ColorSet="Beige_Black_Alpha"/>
+		</Grid>
+		<ScrollPanel Size="930,340" Offset="10,90" Vertical="1" ID="OurSummaryScrollPanel" AutoScrollBar="1">
+			<Stack Anchor="L,T" Offset="0,0" Padding="0" StackGrowth="Bottom" ID="OurSummaryStack">
+				<Container Size="930,35" ID="OurSummaryEntry">
+					<Label Anchor="C,C" Offset="0,0" String="" Font="TwCenMT16" ID="SummaryYear"/>
+					<Label Anchor="C,C" Offset="140,0" String="" Font="TwCenMT16" ID="Growth"/>
+					<Label Anchor="C,C" Offset="280,0" String="" Font="TwCenMT16" ID="TotalGDP"/>
+					<Label Anchor="C,C" Offset="420,0" String="" Font="TwCenMT16" ID="TotalRevenue"/>
+					<Label Anchor="C,C" Offset="560,0" String="" Font="TwCenMT16" ID="TotalExpense"/>
+					<Label Anchor="C,C" Offset="700,0" String="" Font="TwCenMT16" ID="Unemployment"/>
+				</Container>
 			</Stack>
-		</Box>
-	</Instance>
-	<Instance Name="OurExpenseInstance">
-		<Box Size="930,22" Color="0,0,0,0" ID="Base">
-			<Stack StackGrowth="Right">
-				<Box Color="0,0,0,0"  Size="100,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="ExpenseYear" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="TotalExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="PolicyExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="MilitaryExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="BuildingExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="CityExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="DebtPayment" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="CultureExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="TotalDebt" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="InterestRate" />
-				</Box>
-			</Stack>
-		</Box>
-	</Instance>
+		</ScrollPanel>
+		<Graph Size="930,180" Offset="10,480" ID="GDPGrowthGraph"
+			   Title="GDP Growth"
+			   XAxisLabel="Year"
+			   YAxisLabel="Growth (%)"
+			   />
+	</Container>
 	<Instance Name="WorldEconomyInstance">
 		<Box Size="930,32" Color="0,0,0,0" ID="Base">
 			<Stack StackGrowth="Right">
