@@ -617,89 +617,102 @@ function RefreshOurEconomy()
 	g_OurRevenueManager:ResetInstances()
 	g_OurExpenseManager:ResetInstances()
 
-	if g_Economy then
-		local bFirstEntry = true
-		
-		for i,v in ipairs(g_Economy) do
-			
-			if bFirstEntry then
-				local strGrowth = locale("TXT_KEY_POPUP_FA_ECON_OUR_INDEX", GetGrowthString(v.fGDP_Growth) ) 
-				Controls.OurGrowthIndex:SetText( strGrowth )
-				if v.bEnableMarkets then
-					local strMarket = locale("TXT_KEY_POPUP_FA_ECON_INVESTMENT_GDP_MARKET_TT", percent(v.fMarketRate, 1))
-					Controls.InvestmentGDPHelp:SetToolTipString( strMarket )
-				end
-				bFirstEntry = false
-			end
+if g_Economy then
+	local metrics = {
+		"Growth", "Total GDP", "Consumer GDP", "Government GDP", "Investment GDP", "Trade GDP", "Unemployment",
+		"Total Revenue", "Average Tax", "Income Revenue", "Income Tax", "Business Revenue", "Business Tax", "Import Revenue", "Import Tax", "Export Revenue", "Export Tax",
+		"Total Expense", "Policy Expense", "Military Expense", "Building Expense", "City Expense", "Culture Expense", "Total Debt", "Debt Payment", "Interest Rate"
+	}
 
-			local summaryEntry = g_OurSummaryManager:GetInstance()
-			
-			summaryEntry.SummaryYear:SetText( date(v.iYear) )
-			summaryEntry.Growth:SetText( percent(v.fGDP_Growth, 1) )
-			summaryEntry.TotalGDP:SetText( comma(v.iGDP_Total) )
-			summaryEntry.ConsumerGDP:SetText( comma(v.iGDP_Consumer) )
-			summaryEntry.ConsumerPercent:SetText( percent((v.iGDP_Consumer/v.iGDP_Total), 0) )
-			summaryEntry.GovernmentGDP:SetText( comma(v.iGDP_Government) )
-			summaryEntry.GovernmentPercent:SetText( percent((v.iGDP_Government/v.iGDP_Total), 0) )
-			summaryEntry.InvestmentGDP:SetText( comma(v.iGDP_Investment) )
-			summaryEntry.InvestmentPercent:SetText( percent((v.iGDP_Investment/v.iGDP_Total), 0) )
-			summaryEntry.TradeGDP:SetText( comma(v.iGDP_Trade) )
-			summaryEntry.TradePercent:SetText( percent((v.iGDP_Trade/v.iGDP_Total), 0) )
-			summaryEntry.Unemployment:SetText( percent(v.fUnemploymentRate, 1) )
-
-			local revenueEntry = g_OurRevenueManager:GetInstance()
-
-			revenueEntry.RevenueYear:SetText( date(v.iYear) )
-			revenueEntry.TotalRevenue:SetText( currency(v.iRevenue_Total) )
-			revenueEntry.AverageTax:SetText( percent(v.fTaxRate_Average, 0) )
-			revenueEntry.IncomeRevenue:SetText( currency(v.iRevenue_Income) )
-			revenueEntry.IncomeTax:SetText( percent(v.fTaxRate_Income, 0) )
-			revenueEntry.BusinessRevenue:SetText( currency(v.iRevenue_Business) )
-			revenueEntry.BusinessTax:SetText( percent(v.fTaxRate_Business, 0) )
-			revenueEntry.ImportRevenue:SetText( currency(v.iRevenue_Imports) )
-			revenueEntry.ImportTax:SetText( percent(v.fTaxRate_Imports, 0) )
-			revenueEntry.ExportRevenue:SetText( currency(v.iRevenue_Exports) )
-			revenueEntry.ExportTax:SetText( percent(v.fTaxRate_Exports, 0) )
-
-			local expenseEntry = g_OurExpenseManager:GetInstance()
-			
-			expenseEntry.ExpenseYear:SetText( date(v.iYear) )
-			expenseEntry.TotalExpense:SetText( currency(v.iExpense_Total) )
-			expenseEntry.PolicyExpense:SetText( currency(v.iExpense_Policy) )
-			expenseEntry.MilitaryExpense:SetText( currency(v.iExpense_Military) )
-			expenseEntry.BuildingExpense:SetText( currency(v.iExpense_Building) )
-			expenseEntry.CityExpense:SetText( currency(v.iExpense_Cities) )
-			expenseEntry.CultureExpense:SetText( culture(v.iExpense_Political) )
-			expenseEntry.TotalDebt:SetText( currency(v.iDebt_Total) )
-			
-			local iDebtPayment = GetDebtPayment(v.iDebt_Payment)
-			expenseEntry.DebtPayment:SetText( currency(iDebtPayment) )
-			expenseEntry.InterestRate:SetText( percent(v.fInterest_Rate, 1) )
-		end
-		
-		Controls.OurSummaryStack:CalculateSize()
-		Controls.OurSummaryStack:ReprocessAnchoring()
-		Controls.OurRevenueScrollPanel:CalculateInternalSize()
-		Controls.OurRevenueStack:CalculateSize()
-		Controls.OurRevenueStack:ReprocessAnchoring()
-		Controls.OurSummaryScrollPanel:CalculateInternalSize()
-		Controls.OurExpenseStack:CalculateSize()
-		Controls.OurExpenseStack:ReprocessAnchoring()
-		Controls.OurExpenseScrollPanel:CalculateInternalSize()
-		
-		Controls.OurSummaryScrollPanel:SetHide(false)
-		Controls.OurRevenueScrollPanel:SetHide(false)
-		Controls.OurExpenseScrollPanel:SetHide(false)
-		Controls.InfoStack:SetHide(false)
-		Controls.NoEconomy:SetHide(true)
-	
-	else
-		Controls.OurSummaryScrollPanel:SetHide(true)
-		Controls.OurRevenueScrollPanel:SetHide(true)
-		Controls.OurExpenseScrollPanel:SetHide(true)
-		Controls.InfoStack:SetHide(true)
-		Controls.NoEconomy:SetHide(false)
+	local yearLabels = {}
+	for i, v in ipairs(g_Economy) do
+		table.insert(yearLabels, date(v.iYear))
 	end
+
+	local function CreateMetricRow(manager, metricName, values)
+		local instance = manager:GetInstance()
+		instance.SummaryYear:SetText(metricName)
+		for i, value in ipairs(values) do
+			instance["Year" .. i]:SetText(value)
+		end
+	end
+
+	local summaryValues = {}
+	for _, metric in ipairs(metrics) do
+		local rowData = {}
+		for _, yearData in ipairs(g_Economy) do
+			if metric == "Growth" then
+				table.insert(rowData, percent(yearData.fGDP_Growth, 1))
+			elseif metric == "Total GDP" then
+				table.insert(rowData, comma(yearData.iGDP_Total))
+			elseif metric == "Consumer GDP" then
+				table.insert(rowData, comma(yearData.iGDP_Consumer))
+			elseif metric == "Government GDP" then
+				table.insert(rowData, comma(yearData.iGDP_Government))
+			elseif metric == "Investment GDP" then
+				table.insert(rowData, comma(yearData.iGDP_Investment))
+			elseif metric == "Trade GDP" then
+				table.insert(rowData, comma(yearData.iGDP_Trade))
+			elseif metric == "Unemployment" then
+				table.insert(rowData, percent(yearData.fUnemploymentRate, 1))
+			elseif metric == "Total Revenue" then
+				table.insert(rowData, currency(yearData.iRevenue_Total))
+			elseif metric == "Average Tax" then
+				table.insert(rowData, percent(yearData.fTaxRate_Average, 0))
+			elseif metric == "Income Revenue" then
+				table.insert(rowData, currency(yearData.iRevenue_Income))
+			elseif metric == "Income Tax" then
+				table.insert(rowData, percent(yearData.fTaxRate_Income, 0))
+			elseif metric == "Business Revenue" then
+				table.insert(rowData, currency(yearData.iRevenue_Business))
+			elseif metric == "Business Tax" then
+				table.insert(rowData, percent(yearData.fTaxRate_Business, 0))
+			elseif metric == "Import Revenue" then
+				table.insert(rowData, currency(yearData.iRevenue_Imports))
+			elseif metric == "Import Tax" then
+				table.insert(rowData, percent(yearData.fTaxRate_Imports, 0))
+			elseif metric == "Export Revenue" then
+				table.insert(rowData, currency(yearData.iRevenue_Exports))
+			elseif metric == "Export Tax" then
+				table.insert(rowData, percent(yearData.fTaxRate_Exports, 0))
+			elseif metric == "Total Expense" then
+				table.insert(rowData, currency(yearData.iExpense_Total))
+			elseif metric == "Policy Expense" then
+				table.insert(rowData, currency(yearData.iExpense_Policy))
+			elseif metric == "Military Expense" then
+				table.insert(rowData, currency(yearData.iExpense_Military))
+			elseif metric == "Building Expense" then
+				table.insert(rowData, currency(yearData.iExpense_Building))
+			elseif metric == "City Expense" then
+				table.insert(rowData, currency(yearData.iExpense_Cities))
+			elseif metric == "Culture Expense" then
+				table.insert(rowData, culture(yearData.iExpense_Political))
+			elseif metric == "Total Debt" then
+				table.insert(rowData, currency(yearData.iDebt_Total))
+			elseif metric == "Debt Payment" then
+				table.insert(rowData, currency(GetDebtPayment(yearData.iDebt_Payment)))
+			elseif metric == "Interest Rate" then
+				table.insert(rowData, percent(yearData.fInterest_Rate, 1))
+			end
+		end
+		table.insert(summaryValues, {metric, rowData})
+	end
+
+	for _, data in ipairs(summaryValues) do
+		CreateMetricRow(g_OurSummaryManager, data[1], data[2])
+	end
+
+	Controls.OurSummaryStack:CalculateSize()
+	Controls.OurSummaryStack:ReprocessAnchoring()
+	Controls.OurSummaryScrollPanel:CalculateInternalSize()
+
+	Controls.OurSummaryScrollPanel:SetHide(false)
+	Controls.InfoStack:SetHide(false)
+	Controls.NoEconomy:SetHide(true)
+else
+	Controls.OurSummaryScrollPanel:SetHide(true)
+	Controls.InfoStack:SetHide(true)
+	Controls.NoEconomy:SetHide(false)
 end
 g_Tabs["OurEconomy"].RefreshContent = RefreshOurEconomy
 --------------------------------------------------------------------
