@@ -618,101 +618,101 @@ function RefreshOurEconomy()
 	g_OurExpenseManager:ResetInstances()
 
 if g_Economy then
-	local metrics = {
-		"Growth", "Total GDP", "Consumer GDP", "Government GDP", "Investment GDP", "Trade GDP", "Unemployment",
-		"Total Revenue", "Average Tax", "Income Revenue", "Income Tax", "Business Revenue", "Business Tax", "Import Revenue", "Import Tax", "Export Revenue", "Export Tax",
-		"Total Expense", "Policy Expense", "Military Expense", "Building Expense", "City Expense", "Culture Expense", "Total Debt", "Debt Payment", "Interest Rate"
-	}
+    local metrics = {
+        "Growth", "Total GDP", "Consumer GDP", "Government GDP", "Investment GDP", "Trade GDP", "Unemployment",
+        "Total Revenue", "Average Tax", "Income Revenue", "Income Tax", "Business Revenue", "Business Tax", "Import Revenue", "Import Tax", "Export Revenue", "Export Tax",
+        "Total Expense", "Policy Expense", "Military Expense", "Building Expense", "City Expense", "Culture Expense", "Total Debt", "Debt Payment", "Interest Rate"
+    }
 
-	local yearLabels = {}
-	for i, v in ipairs(g_Economy) do
-		table.insert(yearLabels, date(v.iYear))
-	end
+    local yearLabels = {}
+    for i, v in ipairs(g_Economy) do
+        table.insert(yearLabels, date(v.iYear))
+    end
 
-	local function CreateMetricRow(manager, metricName, values)
-		local instance = manager:GetInstance()
-		instance.SummaryYear:SetText(metricName)
-		for i, value in ipairs(values) do
-			instance["Year" .. i]:SetText(value)
-		end
-	end
+    local function CreateMetricRow(manager, metricName, values)
+        local instance = manager:GetInstance()
+        instance.SummaryYear:SetText(metricName)
+        for i, value in ipairs(values) do
+            instance["Year" .. i]:SetText(value)
+        end
+    end
 
-	local summaryValues = {}
-	for _, metric in ipairs(metrics) do
-		local rowData = {}
-		for _, yearData in ipairs(g_Economy) do
-			if metric == "Growth" then
-				table.insert(rowData, percent(yearData.fGDP_Growth, 1))
-			elseif metric == "Total GDP" then
-				table.insert(rowData, comma(yearData.iGDP_Total))
-			elseif metric == "Consumer GDP" then
-				table.insert(rowData, comma(yearData.iGDP_Consumer))
-			elseif metric == "Government GDP" then
-				table.insert(rowData, comma(yearData.iGDP_Government))
-			elseif metric == "Investment GDP" then
-				table.insert(rowData, comma(yearData.iGDP_Investment))
-			elseif metric == "Trade GDP" then
-				table.insert(rowData, comma(yearData.iGDP_Trade))
-			elseif metric == "Unemployment" then
-				table.insert(rowData, percent(yearData.fUnemploymentRate, 1))
-			elseif metric == "Total Revenue" then
-				table.insert(rowData, currency(yearData.iRevenue_Total))
-			elseif metric == "Average Tax" then
-				table.insert(rowData, percent(yearData.fTaxRate_Average, 0))
-			elseif metric == "Income Revenue" then
-				table.insert(rowData, currency(yearData.iRevenue_Income))
-			elseif metric == "Income Tax" then
-				table.insert(rowData, percent(yearData.fTaxRate_Income, 0))
-			elseif metric == "Business Revenue" then
-				table.insert(rowData, currency(yearData.iRevenue_Business))
-			elseif metric == "Business Tax" then
-				table.insert(rowData, percent(yearData.fTaxRate_Business, 0))
-			elseif metric == "Import Revenue" then
-				table.insert(rowData, currency(yearData.iRevenue_Imports))
-			elseif metric == "Import Tax" then
-				table.insert(rowData, percent(yearData.fTaxRate_Imports, 0))
-			elseif metric == "Export Revenue" then
-				table.insert(rowData, currency(yearData.iRevenue_Exports))
-			elseif metric == "Export Tax" then
-				table.insert(rowData, percent(yearData.fTaxRate_Exports, 0))
-			elseif metric == "Total Expense" then
-				table.insert(rowData, currency(yearData.iExpense_Total))
-			elseif metric == "Policy Expense" then
-				table.insert(rowData, currency(yearData.iExpense_Policy))
-			elseif metric == "Military Expense" then
-				table.insert(rowData, currency(yearData.iExpense_Military))
-			elseif metric == "Building Expense" then
-				table.insert(rowData, currency(yearData.iExpense_Building))
-			elseif metric == "City Expense" then
-				table.insert(rowData, currency(yearData.iExpense_Cities))
-			elseif metric == "Culture Expense" then
-				table.insert(rowData, culture(yearData.iExpense_Political))
-			elseif metric == "Total Debt" then
-				table.insert(rowData, currency(yearData.iDebt_Total))
-			elseif metric == "Debt Payment" then
-				table.insert(rowData, currency(GetDebtPayment(yearData.iDebt_Payment)))
-			elseif metric == "Interest Rate" then
-				table.insert(rowData, percent(yearData.fInterest_Rate, 1))
-			end
-		end
-		table.insert(summaryValues, {metric, rowData})
-	end
+    local summaryValues = {}
+    for _, metric in ipairs(metrics) do
+        local rowData = {}
+        for _, yearData in ipairs(g_Economy) do
+            if metric == "Growth" then
+                table.insert(rowData, percent(yearData.fGDP_Growth, 1))
+            elseif metric == "Total GDP" then
+                table.insert(rowData, comma(yearData.iGDP_Total))
+            elseif metric == "Consumer GDP" then
+                table.insert(rowData, comma(yearData.iGDP_Consumer))
+            elseif metric == "Government GDP" then
+                table.insert(rowData, comma(yearData.iGDP_Government))
+            elseif metric == "Investment GDP" then
+                table.insert(rowData, comma(yearData.iGDP_Investment))
+            elseif metric == "Trade GDP" then
+                table.insert(rowData, comma(yearData.iGDP_Trade))
+            elseif metric == "Unemployment" then
+                table.insert(rowData, percent(yearData.fUnemploymentRate, 1))
+            elseif metric == "Total Revenue" then
+                table.insert(rowData, currency(yearData.iRevenue_Total))
+            elseif metric == "Average Tax" then
+                table.insert(rowData, percent(yearData.fTaxRate_Average, 0))
+            elseif metric == "Income Revenue" then
+                table.insert(rowData, currency(yearData.iRevenue_Income))
+            elseif metric == "Income Tax" then
+                table.insert(rowData, percent(yearData.fTaxRate_Income, 0))
+            elseif metric == "Business Revenue" then
+                table.insert(rowData, currency(yearData.iRevenue_Business))
+            elseif metric == "Business Tax" then
+                table.insert(rowData, percent(yearData.fTaxRate_Business, 0))
+            elseif metric == "Import Revenue" then
+                table.insert(rowData, currency(yearData.iRevenue_Imports))
+            elseif metric == "Import Tax" then
+                table.insert(rowData, percent(yearData.fTaxRate_Imports, 0))
+            elseif metric == "Export Revenue" then
+                table.insert(rowData, currency(yearData.iRevenue_Exports))
+            elseif metric == "Export Tax" then
+                table.insert(rowData, percent(yearData.fTaxRate_Exports, 0))
+            elseif metric == "Total Expense" then
+                table.insert(rowData, currency(yearData.iExpense_Total))
+            elseif metric == "Policy Expense" then
+                table.insert(rowData, currency(yearData.iExpense_Policy))
+            elseif metric == "Military Expense" then
+                table.insert(rowData, currency(yearData.iExpense_Military))
+            elseif metric == "Building Expense" then
+                table.insert(rowData, currency(yearData.iExpense_Building))
+            elseif metric == "City Expense" then
+                table.insert(rowData, currency(yearData.iExpense_Cities))
+            elseif metric == "Culture Expense" then
+                table.insert(rowData, culture(yearData.iExpense_Political))
+            elseif metric == "Total Debt" then
+                table.insert(rowData, currency(yearData.iDebt_Total))
+            elseif metric == "Debt Payment" then
+                table.insert(rowData, currency(GetDebtPayment(yearData.iDebt_Payment)))
+            elseif metric == "Interest Rate" then
+                table.insert(rowData, percent(yearData.fInterest_Rate, 1))
+            end
+        end
+        table.insert(summaryValues, {metric, rowData})
+    end
 
-	for _, data in ipairs(summaryValues) do
-		CreateMetricRow(g_OurSummaryManager, data[1], data[2])
-	end
+    for _, data in ipairs(summaryValues) do
+        CreateMetricRow(g_OurSummaryManager, data[1], data[2])
+    end
 
-	Controls.OurSummaryStack:CalculateSize()
-	Controls.OurSummaryStack:ReprocessAnchoring()
-	Controls.OurSummaryScrollPanel:CalculateInternalSize()
+    Controls.OurSummaryStack:CalculateSize()
+    Controls.OurSummaryStack:ReprocessAnchoring()
+    Controls.OurSummaryScrollPanel:CalculateInternalSize()
 
-	Controls.OurSummaryScrollPanel:SetHide(false)
-	Controls.InfoStack:SetHide(false)
-	Controls.NoEconomy:SetHide(true)
+    Controls.OurSummaryScrollPanel:SetHide(false)
+    Controls.InfoStack:SetHide(false)
+    Controls.NoEconomy:SetHide(true)
 else
-	Controls.OurSummaryScrollPanel:SetHide(true)
-	Controls.InfoStack:SetHide(true)
-	Controls.NoEconomy:SetHide(false)
+    Controls.OurSummaryScrollPanel:SetHide(true)
+    Controls.InfoStack:SetHide(true)
+    Controls.NoEconomy:SetHide(false)
 end
 g_Tabs["OurEconomy"].RefreshContent = RefreshOurEconomy
 --------------------------------------------------------------------
