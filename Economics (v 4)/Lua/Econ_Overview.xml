@@ -7,10 +7,6 @@
 			<Box Color=\"0,0,0,0\" Size=\"100,24\">
 				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"Production\" Color1=\"Black,200\" FontStyle=\"Shadow\" ID=\"SummaryYear\" />
 			</Box>
-			<!-- Dynamically generated Year boxes -->
-			<Box Color=\"0,0,0,0\" Size=\"80,24\" RepeatCount=\"10\" RepeatOffset=\"0,0\">
-				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"Production\" Color1=\"Black,200\" FontStyle=\"Shadow\" ID=\"Year1\" />
-			</Box>
 		</Stack>
 	</Box>
 </Instance>
@@ -20,10 +16,6 @@
 		<Stack StackGrowth=\"Right\">
 			<Box Color=\"0,0,0,0\" Size=\"100,24\">
 				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"Gold.255\" Color1=\"0.0.0.128\" Color2=\"255.255.200.255\" FontStyle=\"Shadow\" ID=\"RevenueYear\" />
-			</Box>
-			<!-- Dynamically generated Revenue boxes -->
-			<Box Color=\"0,0,0,0\" Size=\"80,24\" RepeatCount=\"10\" RepeatOffset=\"0,0\">
-				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"Gold.255\" Color1=\"0.0.0.128\" Color2=\"255.255.200.255\" FontStyle=\"Shadow\" ID=\"Year1\" />
 			</Box>
 		</Stack>
 	</Box>
@@ -36,9 +28,6 @@
 				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"COLOR_WARNING_TEXT.255\" Color1=\"Black,200\" FontStyle=\"Shadow\" ID=\"ExpenseYear\" />
 			</Box>
 			<!-- Dynamically generated Expense boxes -->
-			<Box Color=\"0,0,0,0\" Size=\"80,24\" RepeatCount=\"10\" RepeatOffset=\"0,0\">
-				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"COLOR_WARNING_TEXT.255\" Color1=\"Black,200\" FontStyle=\"Shadow\" ID=\"Year1\" />
-			</Box>
 		</Stack>
 	</Box>
 </Instance>
