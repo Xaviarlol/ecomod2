@@ -1,123 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Context ColorSet="Beige_Black_Alpha" Font="TwCenMT16" FontStyle="Shadow">
 
-	<Instance Name="OurSummaryInstance">
-		<Box Size="930,22" Color="0,0,0,0" ID="Base">
-			<Stack StackGrowth="Right">
-				<Box Color="0,0,0,0"  Size="100,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="SummaryYear" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="Growth" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="TotalGDP" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="ConsumerGDP" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="40,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="ConsumerPercent" />
-				</Box>
-				<Box Anchor="L,T" Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="GovernmentGDP" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="40,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="GovernmentPercent" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="InvestmentGDP" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="40,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="InvestmentPercent" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="TradeGDP" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="40,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="TradePercent" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="60,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Production" Color1="Black,200" FontStyle="Shadow" ID="Unemployment" />
-				</Box>
-			</Stack>
-		</Box>
-	</Instance>
-	<Instance Name="OurRevenueInstance">
-		<Box Size="930,22" Color="0,0,0,0" ID="Base">
-			<Stack StackGrowth="Right">
-				<Box Color="0,0,0,0"  Size="100,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="RevenueYear" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="TotalRevenue" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="AverageTax" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="IncomeRevenue" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="IncomeTax" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="BusinessRevenue" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="BusinessTax" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="ImportRevenue" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="ImportTax" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="110,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="ExportRevenue" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="50,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="Gold.255" Color1="0.0.0.128" Color2="255.255.200.255" FontStyle="Shadow" ID="ExportTax" />
-				</Box>
-			</Stack>
-		</Box>
-	</Instance>
-	<Instance Name="OurExpenseInstance">
-		<Box Size="930,22" Color="0,0,0,0" ID="Base">
-			<Stack StackGrowth="Right">
-				<Box Color="0,0,0,0"  Size="100,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="ExpenseYear" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="TotalExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="PolicyExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="MilitaryExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="BuildingExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="CityExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="DebtPayment" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="CultureExpense" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="TotalDebt" />
-				</Box>
-				<Box Color="0,0,0,0"  Size="90,24" >
-					<Label Anchor="C,C" Font="TwCenMT14" Color0="COLOR_WARNING_TEXT.255" Color1="Black,200" FontStyle="Shadow" ID="InterestRate" />
-				</Box>
-			</Stack>
-		</Box>
-	</Instance>
+<Instance Name=\"OurSummaryInstance\">
+	<Box Size=\"930,22\" Color=\"0,0,0,0\" ID=\"Base\">
+		<Stack StackGrowth=\"Right\">
+			<Box Color=\"0,0,0,0\" Size=\"100,24\">
+				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"Production\" Color1=\"Black,200\" FontStyle=\"Shadow\" ID=\"SummaryYear\" />
+			</Box>
+			<!-- Dynamically generated Year boxes -->
+			<Box Color=\"0,0,0,0\" Size=\"80,24\" RepeatCount=\"10\" RepeatOffset=\"0,0\">
+				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"Production\" Color1=\"Black,200\" FontStyle=\"Shadow\" ID=\"Year1\" />
+			</Box>
+		</Stack>
+	</Box>
+</Instance>
+
+<Instance Name=\"OurRevenueInstance\">
+	<Box Size=\"930,22\" Color=\"0,0,0,0\" ID=\"Base\">
+		<Stack StackGrowth=\"Right\">
+			<Box Color=\"0,0,0,0\" Size=\"100,24\">
+				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"Gold.255\" Color1=\"0.0.0.128\" Color2=\"255.255.200.255\" FontStyle=\"Shadow\" ID=\"RevenueYear\" />
+			</Box>
+			<!-- Dynamically generated Revenue boxes -->
+			<Box Color=\"0,0,0,0\" Size=\"80,24\" RepeatCount=\"10\" RepeatOffset=\"0,0\">
+				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"Gold.255\" Color1=\"0.0.0.128\" Color2=\"255.255.200.255\" FontStyle=\"Shadow\" ID=\"Year1\" />
+			</Box>
+		</Stack>
+	</Box>
+</Instance>
+
+<Instance Name=\"OurExpenseInstance\">
+	<Box Size=\"930,22\" Color=\"0,0,0,0\" ID=\"Base\">
+		<Stack StackGrowth=\"Right\">
+			<Box Color=\"0,0,0,0\" Size=\"100,24\">
+				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"COLOR_WARNING_TEXT.255\" Color1=\"Black,200\" FontStyle=\"Shadow\" ID=\"ExpenseYear\" />
+			</Box>
+			<!-- Dynamically generated Expense boxes -->
+			<Box Color=\"0,0,0,0\" Size=\"80,24\" RepeatCount=\"10\" RepeatOffset=\"0,0\">
+				<Label Anchor=\"C,C\" Font=\"TwCenMT14\" Color0=\"COLOR_WARNING_TEXT.255\" Color1=\"Black,200\" FontStyle=\"Shadow\" ID=\"Year1\" />
+			</Box>
+		</Stack>
+	</Box>
+</Instance>
+	
 	<Instance Name="WorldEconomyInstance">
 		<Box Size="930,32" Color="0,0,0,0" ID="Base">
 			<Stack StackGrowth="Right">
